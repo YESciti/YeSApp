@@ -13,9 +13,9 @@ bin/
 gen/
 
 # Gradle files
+local.properties
 .gradle/
 build/
-/*/build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -25,3 +25,11 @@ proguard/
 
 # Log Files
 *.log
+
+# Mac Files
+*.DS_Store
+
+# Intellij Idea and Android Studio files
+.idea
+*.iml
+
