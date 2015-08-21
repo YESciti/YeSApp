@@ -78,6 +78,7 @@ public class MainActivity extends Activity implements OnColorSelectedListener{
         	
         	@Override
         	public void onClick(View arg0) {
+        		string test="";
         		Intent intent = new Intent(MainActivity.this,ProgressActivity.class);
         		intent.putExtra("BACKGROUND", backgroundColor);
         		startActivity(intent);
