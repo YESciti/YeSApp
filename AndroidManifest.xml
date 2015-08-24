@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.exchange.yes"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name="com.exchange.yes.LoginActivity"
+            android:label="@string/title_activity_login" 
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+				
+                <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+            
+        </activity>
+
+        
+          <activity
+            android:name="com.exchange.yes.FAB_Activity"
+            android:theme="@android:style/Theme.NoTitleBar" 
+            android:label="@string/title_activity_fab_" >
+            
+        </activity>
+        
+         <activity
+            android:name="com.exchange.yes.AskActivity"
+            android:label="@string/title_activity_ask" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.AskQuickActivity"
+            android:label="@string/title_activity_ask_quick"
+            android:theme="@android:style/Theme.NoTitleBar" > >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.AskCusromActivity"
+            android:label="@string/title_activity_ask_cusrom" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.TestActivity"
+            android:label="@string/title_activity_test" >
+        </activity>
+   
+
+        <activity
+            android:name="com.exchange.yes.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.ButtonsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.SwitchActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.Home2Fra"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.ProgressActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.WidgetActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.ExchangeActivity"
+            android:label="@string/title_activity_exchange" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.MineActivity"
+            android:label="@string/title_activity_mine" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.NichengActivity"
+            android:label="@string/title_activity_nicheng" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.BindingActivity"
+            android:label="@string/title_activity_binding" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.RecordActivity"
+            android:label="@string/title_activity_record" >
+        </activity>
+        <activity
+            android:name="com.exchange.yes.QuickTradeActivity"
+            android:label="@string/title_activity_quick_trade" >
+        </activity>
+      
+        
+        <activity
+            android:name="com.exchange.yes.LoginActivity2"
+            android:label="@string/title_activity_login" 
+            android:theme="@android:style/Theme.NoTitleBar" >
+             </activity>
+    </application>
+
+</manifest>
