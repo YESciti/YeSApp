@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.exchange.yes.R;
-import com.gc.materialdesign.views.LayoutRipple;
 /**
  * home3
  * @author andye

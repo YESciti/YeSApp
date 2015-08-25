@@ -1,9 +1,6 @@
 package com.exchange.yes;
 
 import com.exchange.yes.R;
-import com.exchange.yes.R.layout;
-import com.exchange.yes.R.menu;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;

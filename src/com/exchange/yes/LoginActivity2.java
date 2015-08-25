@@ -14,8 +14,6 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.gc.materialdesign.views.Button;
-
 public class LoginActivity2 extends Activity implements OnClickListener {
 
 	@Override

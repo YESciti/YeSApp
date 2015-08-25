@@ -9,8 +9,6 @@ import android.os.Message;
 import android.view.Window;
 
 import com.exchange.yes.R;
-import com.gc.materialdesign.views.ProgressBarDeterminate;
-import com.gc.materialdesign.views.ProgressBarIndeterminateDeterminate;
 
 
 public class ProgressActivity extends Activity {

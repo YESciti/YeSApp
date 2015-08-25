@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.exchange.yes.R;
-import com.gc.materialdesign.views.LayoutRipple;
-import com.gc.materialdesign.widgets.Dialog;
 /**
  * home2
  * @author andye
