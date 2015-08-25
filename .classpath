@@ -7,8 +7,8 @@
 	<classpathentry kind="lib" path="bin/android-support-annotations.jar"/>
 	<classpathentry kind="lib" path="libs/ActiveAndroid.jar"/>
 	<classpathentry kind="lib" path="libs/gson-1.6.jar"/>
+	<classpathentry kind="lib" path="libs/android-async-http-1.4.8.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="libs/android-async-http-1.4.8.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
