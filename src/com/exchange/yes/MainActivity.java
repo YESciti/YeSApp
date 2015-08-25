@@ -53,7 +53,7 @@ public class MainActivity extends Activity implements OnColorSelectedListener{
             
             localService = binder.getService();  
             System.out.println("test416 onServiceConnected onCreate");
-            MessageService.onGetMessageListener = new Listener();
+            localService.onGetMessageListener = new Listener();
             serviceBound = true;  
         }  
   
