@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
+import com.gc.materialdesign.views.LayoutRipple;
+import com.gc.materialdesign.widgets.Dialog;
+import com.exchange.pre.QuickTradeActivity;
 import com.exchange.yes.R;
 /**
  * home2

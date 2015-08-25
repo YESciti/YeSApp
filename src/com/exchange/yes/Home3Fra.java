@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.gc.materialdesign.views.LayoutRipple;
 import android.view.ViewGroup;
 import com.exchange.yes.R;
 /**

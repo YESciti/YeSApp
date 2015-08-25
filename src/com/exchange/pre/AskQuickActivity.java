@@ -1,28 +1,28 @@
-package com.exchange.yes;
+package com.exchange.pre;
 
+import com.exchange.yes.R;
+import com.exchange.yes.R.id;
+import com.exchange.yes.R.layout;
+import com.exchange.yes.R.menu;
 
-
-import com.exchange.pre.AskQuickActivity;
-
+import floatingactionbutton.FloatingActionButton;
+import floatingactionbutton.FloatingActionsMenu;
+import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-import floatingactionbutton.FloatingActionButton;
-import floatingactionbutton.FloatingActionsMenu;
 
-public class FAB_Activity extends Activity {
+public class AskQuickActivity extends Activity {
 
 	public static int flag = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_fab_);
-		
+		setContentView(R.layout.activity_ask_quick);
 		
 		final View action_personal = findViewById(R.id.action_personal);
 		final View action_mall = findViewById(R.id.action_mall);
@@ -65,9 +65,9 @@ public class FAB_Activity extends Activity {
 	    action_qex.setOnClickListener(new OnClickListener() {
 	      @Override
 	      public void onClick(View view) {
-	    	 Intent quickIntent = new Intent(FAB_Activity.this,AskQuickActivity.class);
+	    	 Intent quickIntent = new Intent(AskQuickActivity.this,AskQuickActivity.class);
 	 		 startActivity(quickIntent);
-	        Toast.makeText(FAB_Activity.this, "right", Toast.LENGTH_SHORT).show();
+	        Toast.makeText(AskQuickActivity.this, "right", Toast.LENGTH_SHORT).show();
 	      }
 	    });
 	}
@@ -75,12 +75,8 @@ public class FAB_Activity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.fab_, menu);
+		getMenuInflater().inflate(R.menu.about, menu);
 		return true;
-	};
-		
-	    
-	   
 	}
 
-
+}

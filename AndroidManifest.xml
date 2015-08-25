@@ -41,32 +41,32 @@
             android:label="@string/title_activity_ask" >
         </activity>
         <activity
-            android:name="com.exchange.yes.AskQuickActivity"
+            android:name="com.exchange.pre.AskQuickActivity"
             android:label="@string/title_activity_ask_quick"
             android:theme="@android:style/Theme.NoTitleBar" > >
         </activity>
         <activity
-            android:name="com.exchange.yes.AskCusromActivity"
+            android:name="com.exchange.pre.AskCusromActivity"
             android:label="@string/title_activity_ask_cusrom" >
         </activity>
         <activity
-            android:name="com.exchange.yes.TestActivity"
+            android:name="com.exchange.pre.TestActivity"
             android:label="@string/title_activity_test" >
         </activity>
    
 
         <activity
-            android:name="com.exchange.yes.MainActivity"
+            android:name="com.exchange.pre.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.exchange.yes.ButtonsActivity"
+            android:name="com.exchange.pre.ButtonsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.exchange.yes.SwitchActivity"
+            android:name="com.exchange.pre.SwitchActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
@@ -76,12 +76,12 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.exchange.yes.ProgressActivity"
+            android:name="com.exchange.pre.ProgressActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.exchange.yes.WidgetActivity"
+            android:name="com.exchange.pre.WidgetActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
@@ -90,37 +90,37 @@
             android:label="@string/title_activity_home" >
         </activity>
         <activity
-            android:name="com.exchange.yes.ExchangeActivity"
+            android:name="com.exchange.pre.ExchangeActivity"
             android:label="@string/title_activity_exchange" >
         </activity>
         <activity
-            android:name="com.exchange.yes.AboutActivity"
+            android:name="com.exchange.pre.AboutActivity"
             android:label="@string/title_activity_about" >
         </activity>
         <activity
-            android:name="com.exchange.yes.MineActivity"
+            android:name="com.exchange.pre.MineActivity"
             android:label="@string/title_activity_mine" >
         </activity>
         <activity
-            android:name="com.exchange.yes.NichengActivity"
+            android:name="com.exchange.pre.NichengActivity"
             android:label="@string/title_activity_nicheng" >
         </activity>
         <activity
-            android:name="com.exchange.yes.BindingActivity"
+            android:name="com.exchange.pre.BindingActivity"
             android:label="@string/title_activity_binding" >
         </activity>
         <activity
-            android:name="com.exchange.yes.RecordActivity"
+            android:name="com.exchange.pre.RecordActivity"
             android:label="@string/title_activity_record" >
         </activity>
         <activity
-            android:name="com.exchange.yes.QuickTradeActivity"
+            android:name="com.exchange.pre.QuickTradeActivity"
             android:label="@string/title_activity_quick_trade" >
         </activity>
       
         
         <activity
-            android:name="com.exchange.yes.LoginActivity2"
+            android:name="com.exchange.pre.LoginActivity2"
             android:label="@string/title_activity_login" 
             android:theme="@android:style/Theme.NoTitleBar" >
              </activity>
