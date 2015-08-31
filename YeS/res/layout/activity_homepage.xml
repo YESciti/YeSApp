@@ -1,38 +1,61 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"     
+    android:layout_height="match_parent">
+<ScrollView     
+         android:id="@+id/myscroll"      
+         android:layout_width="match_parent"     
+         android:layout_height="match_parent"
+         android:layout_weight="1.0" > 
+
+
+
+<RelativeLayout 
+
     android:background="#ffffff"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<com.gc.materialdesign.views.ButtonRectangle
+    android:layout_height="1000sp" >
+    <com.gc.materialdesign.views.ButtonRectangle
                 android:id="@+id/button"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="500sp"
                 android:layout_centerInParent="true"
                 android:background="#1E88E5"
                 android:text="我是主页君" />
    
+
+
+
+</RelativeLayout>
+
+
+
+</ScrollView> 
+
 <com.exchange.yes.dep.FloatingActionsMenu
         android:id="@+id/multiple_actions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom ="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+       
         fab:fab_addButtonColorNormal="@color/background"
         fab:fab_addButtonColorPressed="@color/blue_semi_transparent_pressed"
         fab:fab_addButtonPlusIconColor="@color/half_black"
+        fab:fab_icon="@drawable/icn_select_color"
         fab:fab_labelStyle="@style/menu_labels_style"
+        fab:fab_addButtonSize="mini"
         android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginRight="16dp">
 
         <com.exchange.yes.dep.FloatingActionButton
             android:id="@+id/action_personal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
-            fab:fab_title="个人中心"
+            fab:fab_title="个人中心"            
+            fab:fab_icon="@drawable/icn_widget"
+
             fab:fab_colorPressed="@color/white_pressed"/>
 
         <com.exchange.yes.dep.FloatingActionButton
@@ -40,22 +63,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
-            
+            fab:fab_icon="@drawable/icn_switch"
             fab:fab_title="商城"
+
             fab:fab_colorPressed="@color/white_pressed"/>
-        <com.exchange.yes.dep.FloatingActionButton
-            android:id="@+id/action_infor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_title="市场信息"
-            fab:fab_colorPressed="@color/white_pressed"/>
+      
         <com.exchange.yes.dep.FloatingActionButton
             android:id="@+id/action_qexchange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
             fab:fab_title="快速交易"
+
             fab:fab_colorPressed="@color/white_pressed"
             android:visibility="gone" />
          <com.exchange.yes.dep.FloatingActionButton
@@ -63,12 +82,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/white"
+            fab:fab_icon="@drawable/icn_button"
             fab:fab_title="自定义交易"
             fab:fab_colorPressed="@color/white_pressed"
             android:visibility="gone" />"
 
     </com.exchange.yes.dep.FloatingActionsMenu>
-
-
-
-</RelativeLayout>
+    </RelativeLayout>
