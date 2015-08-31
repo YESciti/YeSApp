@@ -31,7 +31,7 @@ public class HomepageActivity extends Activity {
 		
 		final View action_personal = findViewById(R.id.action_personal);
 		final View action_mall = findViewById(R.id.action_mall);
-		final View action_infor = findViewById(R.id.action_infor);
+//		final View action_infor = findViewById(R.id.action_infor);
 		final View action_qexchange =findViewById(R.id.action_qexchange);
 		final View action_cexchange =findViewById(R.id.action_cexchange);
 		
@@ -44,7 +44,7 @@ public class HomepageActivity extends Activity {
 	    	  if (flag == 0) {  
 	    		  action_personal.setVisibility(action_personal.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
 	    		  action_mall.setVisibility(action_mall.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
-	    		  action_infor.setVisibility(action_infor.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
+//	    		  action_infor.setVisibility(action_infor.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
 	    		  action_qexchange.setVisibility(action_qexchange.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
 	    		  action_cexchange.setVisibility(action_cexchange.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
 	    		
@@ -52,7 +52,7 @@ public class HomepageActivity extends Activity {
 	      } else {
 	    	  	action_personal.setVisibility(action_personal.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
 	    	  	action_mall.setVisibility(action_mall.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
-	    	  	action_infor.setVisibility(action_infor.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
+//	    	  	action_infor.setVisibility(action_infor.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
 	    	  	action_qexchange.setVisibility(action_qexchange.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
 	    	  	action_cexchange.setVisibility(action_cexchange.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
 	    	  	

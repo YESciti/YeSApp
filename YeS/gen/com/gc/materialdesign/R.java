@@ -62,26 +62,26 @@ public final class R {
 		public static final int sprite_check = 0x7f020029;
 	}
 	public static final class id {
-		public static final int action_settings = 0x7f08007e;
-		public static final int blue = 0x7f080069;
-		public static final int button_accept = 0x7f080070;
-		public static final int button_cancel = 0x7f08006f;
+		public static final int action_settings = 0x7f08007f;
+		public static final int blue = 0x7f08006a;
+		public static final int button_accept = 0x7f080071;
+		public static final int button_cancel = 0x7f080070;
 		public static final int buttonflat = 0x7f08002b;
-		public static final int contentDialog = 0x7f08006b;
-		public static final int contentSelector = 0x7f080065;
-		public static final int dialog_rootView = 0x7f08006a;
-		public static final int green = 0x7f080068;
-		public static final int message = 0x7f08006e;
-		public static final int message_scrollView = 0x7f08006d;
-		public static final int number_indicator_spinner_content = 0x7f080073;
-		public static final int progressBarCircularIndetermininate = 0x7f080055;
-		public static final int red = 0x7f080067;
-		public static final int rootSelector = 0x7f080064;
-		public static final int shape_bacground = 0x7f08007d;
-		public static final int snackbar = 0x7f08007b;
-		public static final int text = 0x7f08007c;
-		public static final int title = 0x7f08006c;
-		public static final int viewColor = 0x7f080066;
+		public static final int contentDialog = 0x7f08006c;
+		public static final int contentSelector = 0x7f080066;
+		public static final int dialog_rootView = 0x7f08006b;
+		public static final int green = 0x7f080069;
+		public static final int message = 0x7f08006f;
+		public static final int message_scrollView = 0x7f08006e;
+		public static final int number_indicator_spinner_content = 0x7f080074;
+		public static final int progressBarCircularIndetermininate = 0x7f080056;
+		public static final int red = 0x7f080068;
+		public static final int rootSelector = 0x7f080065;
+		public static final int shape_bacground = 0x7f08007e;
+		public static final int snackbar = 0x7f08007c;
+		public static final int text = 0x7f08007d;
+		public static final int title = 0x7f08006d;
+		public static final int viewColor = 0x7f080067;
 	}
 	public static final class layout {
 		public static final int activity_main = 0x7f03000c;
