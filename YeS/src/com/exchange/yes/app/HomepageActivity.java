@@ -2,21 +2,23 @@ package com.exchange.yes.app;
 
 
 
-import com.exchange.yes.R;
-import com.exchange.yes.R.id;
-import com.exchange.yes.R.layout;
-import com.exchange.yes.R.menu;
-import com.exchange.yes.dep.FloatingActionButton;
-import com.exchange.yes.dep.FloatingActionsMenu;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.exchange.yes.R;
+import com.exchange.yes.dep.FloatingActionButton;
+import com.exchange.yes.dep.FloatingActionsMenu;
 
 public class HomepageActivity extends Activity {
 
@@ -37,7 +39,7 @@ public class HomepageActivity extends Activity {
 		
 		
 	    FloatingActionButton blue_sFAB = new FloatingActionButton(getBaseContext());
-	    blue_sFAB.setTitle("����");
+	    blue_sFAB.setTitle("交易");
 	    blue_sFAB.setOnClickListener(new OnClickListener() {
 	      @Override
 	      public void onClick(View v) {
@@ -75,6 +77,42 @@ public class HomepageActivity extends Activity {
 	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
 	      }
 	    });
+	    
+	    
+	    
+	    
+	    
+	    
+ListView list = (ListView) findViewById(R.id.tradelistview); 
+	    
+	    //test
+	    ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();  
+	    for(int i=0;i<30;i++)  
+	    {  
+	        HashMap<String, String> map = new HashMap<String, String>();  
+	        map.put("ItemTitle", "This is Title.....");  
+	        map.put("ItemText", i+"");  
+	        mylist.add(map);  
+	    }  
+	
+	
+	//Êý¾Ýadapter
+	 SimpleAdapter mSchedule = new SimpleAdapter(this, 
+             mylist,//Êý¾ÝÀ´Ô´   
+             R.layout.listview_trade,//ListItemµÄXMLÊµÏÖ  
+               
+             //¶¯Ì¬Êý×éÓëListItem¶ÔÓ¦µÄ×ÓÏî          
+             new String[] {"ItemTitle", "ItemText"},   
+               
+             //ListItemµÄXMLÎÄ¼þÀïÃæµÄÁ½¸öTextView ID  
+             new int[] {R.id.listview_1,R.id.listview_2});  
+	 		//Ìí¼Ó²¢ÇÒÏÔÊ¾  
+	 		list.setAdapter(mSchedule); 
+	    
+	    
+	    
+	    
+	    
 	}
 
 	@Override

@@ -62,6 +62,27 @@
     <string name="title_activity_record">RecordActivity</string>
     <string name="title_activity_quick_trade">QuickTradeActivity</string>
     
+    
+    <string name="shichanghuilv">市场汇率</string>
+    <string name="meijin">美金</string>
+    <string name="sanshi">30</string>
+    <string name="renminbi">人民币</string>
+    <string name="approximate">约合</string>
+    <string name="yuehe">约合</string>
+    <string name="buy">买</string>
+    <string name="sell">卖</string>
+    <string name="wu">5</string>
+    <string name="qianqujiaoyi">前去交易</string>
+    <string name="title_activity_quick_ex">Quick_exActivity</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="shedinghuilv">设定汇率</string>
+    <string name="xuanzebizhong">选择币种</string>
+    <string name="shurujine">输入金额</string>
+    <string name="huilvmaohao">汇率 ：</string>
+    <string name="liu">6.0</string>
+    
+    
+    
      <string name="app_name">YesLayout</string>
     <string name="action_settings">Settings</string>
     
