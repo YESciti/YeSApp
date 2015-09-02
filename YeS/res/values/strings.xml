@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-
-    <string name="app_name">yes</string>
+    <string name="app_name">YesLayout</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
@@ -61,16 +60,13 @@
     <string name="title_activity_binding">BindingActivity</string>
     <string name="title_activity_record">RecordActivity</string>
     <string name="title_activity_quick_trade">QuickTradeActivity</string>
-    
-     <string name="app_name">YesLayout</string>
+    <string name="app_name">YesLayout</string>
     <string name="action_settings">Settings</string>
-    
     <string name="title_activity_ask">AskActivity</string>
     <string name="title_activity_ask_quick">AskQuickActivity</string>
     <string name="title_activity_ask_cusrom">AskCusromActivity</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_main">MainActivity</string>
-
     <string-array name="spinnername">
         <item>美元</item>
         <item>港币</item>
@@ -78,7 +74,5 @@
         <item>澳元</item>
         <item>人民币</item>
     </string-array>
-
     <string name="title_activity_homepage">FAB_Activity</string>
-
 </resources>

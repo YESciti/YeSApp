@@ -1,5 +1,5 @@
 
-package com.exchange.yes.db;
+package com.exchange.yes.app;
 
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.app.Application;
