@@ -26,8 +26,10 @@ public interface OnGetMessageListener extends Serializable{
 //	//鐢ㄦ埛绂荤嚎
 //	public abstract void onMessageArriveUpdateUserLoginState();
 //	public abstract void onMessageArriveOnActivityPause(ChatMessage chatMessageGet);
-//	//鍒锋柊椤惧鍒楄〃
-//	public abstract void onRefreshState();
+// 更新页面
+	public abstract void onRefreshState();
+//更新listview
+	public abstract void onRefreshlistState();
 }
 
 

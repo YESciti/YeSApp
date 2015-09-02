@@ -9,43 +9,33 @@ package com.exchange.yes.service;
  * setrvice瀹屽叏浣滀负璺敱灞傦紝浣滀负娑堟伅鐨勮捣濮嬬珯
  */
 
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.AlarmManager;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
-import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.util.Log;
-import android.widget.RemoteViews;
-import com.loopj.android.http.AsyncHttpClient;
+
+import com.exchange.yes.util.MobileManagerClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 public class MessageService extends Service {
+	//字段区
+	public static String userid;
+	public static String userphone;
+	
+	
+	//参数区
 	public OnGetMessageListener onGetMessageListener;
 	public boolean isCancel=false;
 	public boolean isActivityPause=false;
+	public boolean ispoll=false;
 	public static final String ACTION = "com.exchange.yes.service.PollingService";
 //	 private final IBinder mBinder = new LocalBinder();  
 
@@ -53,7 +43,7 @@ public class MessageService extends Service {
 	
 	
 //	private OnServiceUIChangeListener ServiceUIChangeListener;
-//	//鍥炶皟鎺ュ彛
+//	//回调接口
 //	public void SetServiceUIChangeListener(OnServiceUIChangeListener onServiceUIChangeListener) {  
 //    this.ServiceUIChangeListener = onServiceUIChangeListener;  
 //}  
@@ -75,7 +65,7 @@ public class MessageService extends Service {
 		// TODO Auto-generated method stub
 		Log.d("MessageService", "test416 MessageServiceonDestroy() executed");
 
-		// 閿?姣佹椂閲嶆柊鍚姩Service
+		// 销毁时重新启动Service
 //		PollingUtils.startPollingService(MessageService.this,
 //				getRandomTime(), MessageService.class,
 //				MessageService.ACTION);
@@ -113,7 +103,7 @@ public class MessageService extends Service {
 
 	public class MsgBinder extends Binder {
 		/**
-		 * 鑾峰彇褰撳墠Service鐨勫疄渚?
+		 * 获取当前Service的实例
 		 * 
 		 * @return
 		 */
@@ -122,21 +112,21 @@ public class MessageService extends Service {
 		}
 	}
 	/**
-	 * 鏇存柊杩涘害鐨勫洖璋冩帴鍙? 鎵?鏈夋秷鎭殑鎿嶄綔锛岄兘鏄?氳繃鍥炴帀瀹屾垚鐨? such as updateChatFragment
+	 *  更新进度的回调接口 所有消息的操作，都是通过回掉完成的 such as updateChatFragment
 	 * updateConsultFragment
 	 */
 
 
 
 	/**
-	 * 鑾峰彇褰撳墠Service鐨勫疄渚?
+	 * 获取当前Service的实例
 	 * 
 	 * @return
 	 */
 
 
 	/*
-	 * 杈呭姪鏂规硶锛? isExistThenUpdate 淇濇寔鏈?澶?30鏉′細璇?
+	 *辅助方法： isExistThenUpdate 保持最多30条会话
 	 */
 	
 
@@ -145,9 +135,9 @@ public class MessageService extends Service {
 
 	
 	public void repoll() { 
-		// 闅忔満鏁扮敓鎴愬櫒
+		// 随机数生成器
 		Random rd=new Random();
-		// 鑾峰緱50~250ms鐨勪竴涓殢鏈烘暟
+		// 获得50~250ms的一个随机数
 		int delaytime = (int)(rd.nextDouble() * 200 + 50);
 		
 		System.out.println("test423 MessageService repoll");
@@ -156,7 +146,7 @@ public class MessageService extends Service {
 			@Override
 			public void run()
 			{
-				// 閲嶆柊鍙憄oll
+				// 重新发poll
 				
 				poll();
 			}
@@ -166,9 +156,14 @@ public class MessageService extends Service {
 	
 	
 	/**
-	 * 妯℃嫙涓嬭浇浠诲姟锛屾瘡绉掗挓鏇存柊涓?娆?
+	 * 模拟下载任务，每秒钟更新一次
 	 */
-	public void poll() {}
+	public void poll() {
+		if (onGetMessageListener != null)
+			onGetMessageListener.onRefreshState();
+		
+		
+	}
 
 	public void cancelGetMessage() {}
 
@@ -188,6 +183,21 @@ public class MessageService extends Service {
 	 */
 
 
+	
+	//兰永坤 构造requestparams
+	private RequestParams getRequestParams() {
+		RequestParams requestParams = null;
+		HashMap<String, String> paramMap = new HashMap<String, String>();
+		// sPhelper = new SPhelper(getActivity());
+		;// LoginActivity.inloginMonitor.unitid
+		paramMap.put("usid", userid);
+		paramMap.put("uscookie", userphone);
+		paramMap.put("deviceType", "android");
+		System.out.println("poll userid" + userid);
+	
+		requestParams = new RequestParams(paramMap);
+		return requestParams;
+	}
 	// 鏋勯?燫equestParams
 
 
