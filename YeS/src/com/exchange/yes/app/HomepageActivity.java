@@ -6,30 +6,48 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
+import android.view.MotionEvent;
 import com.exchange.yes.R;
+
 import com.exchange.yes.dep.FloatingActionButton;
 import com.exchange.yes.dep.FloatingActionsMenu;
 
-public class HomepageActivity extends Activity {
+
+
+
+public class HomepageActivity extends Activity{
 
 	public static int flag = 0;
+	public static Boolean islistok= false;
+	public static ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>(); 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_homepage);
+		Log.i("homepage","right1;");
 		
+		try{
+		setContentView(R.layout.activity_homepage);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		Log.i("homepage","right2;");
 		
 		final View action_personal = findViewById(R.id.action_personal);
 		final View action_mall = findViewById(R.id.action_mall);
@@ -37,6 +55,7 @@ public class HomepageActivity extends Activity {
 		final View action_qexchange =findViewById(R.id.action_qexchange);
 		final View action_cexchange =findViewById(R.id.action_cexchange);
 		
+		android.widget.ScrollView scroll=(android.widget.ScrollView)findViewById(R.id.myscroll);
 		
 	    FloatingActionButton blue_sFAB = new FloatingActionButton(getBaseContext());
 	    blue_sFAB.setTitle("交易");
@@ -63,6 +82,9 @@ public class HomepageActivity extends Activity {
 	      }
 	    });
 
+	    
+	    
+	    
 	    final FloatingActionsMenu menuMultipleActions = (FloatingActionsMenu) findViewById(R.id.multiple_actions);
 	    menuMultipleActions.addButton(blue_sFAB);
 	    
@@ -83,38 +105,39 @@ public class HomepageActivity extends Activity {
 	    
 	    
 	    
-ListView list = (ListView) findViewById(R.id.tradelistview); 
 	    
-	    //test
-	    ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();  
-	    for(int i=0;i<30;i++)  
-	    {  
-	        HashMap<String, String> map = new HashMap<String, String>();  
-	        map.put("ItemTitle", "This is Title.....");  
-	        map.put("ItemText", i+"");  
-	        mylist.add(map);  
-	    }  
+	    
+	    
+//	    ListView list = (ListView) findViewById(R.id.tradelistview); 
+//	    
+//	    //test
+//	     
+//	    for(int i=0;i<30;i++)  
+//	    {  
+//	        HashMap<String, String> map = new HashMap<String, String>();  
+//	        map.put("ItemTitle", "This is Title.....");  
+//	        map.put("ItemText", i+"");  
+//	        mylist.add(map);  
+//	    }  
 	
 	
-	//Êý¾Ýadapter
-	 SimpleAdapter mSchedule = new SimpleAdapter(this, 
-             mylist,//Êý¾ÝÀ´Ô´   
-             R.layout.listview_trade,//ListItemµÄXMLÊµÏÖ  
-               
-             //¶¯Ì¬Êý×éÓëListItem¶ÔÓ¦µÄ×ÓÏî          
-             new String[] {"ItemTitle", "ItemText"},   
-               
-             //ListItemµÄXMLÎÄ¼þÀïÃæµÄÁ½¸öTextView ID  
-             new int[] {R.id.listview_1,R.id.listview_2});  
-	 		//Ìí¼Ó²¢ÇÒÏÔÊ¾  
-	 		list.setAdapter(mSchedule); 
-	    
-	    
-	    
-	    
-	    
+//	//Êý¾Ýadapter
+//	 SimpleAdapter mSchedule = new SimpleAdapter(this, 
+//             mylist,//Êý¾ÝÀ´Ô´   
+//             R.layout.listview_trade,//ListItemµÄXMLÊµÏÖ  
+//               
+//             //¶¯Ì¬Êý×éÓëListItem¶ÔÓ¦µÄ×ÓÏî          
+//             new String[] {"ItemTitle", "ItemText"},   
+//               
+//             //ListItemµÄXMLÎÄ¼þÀïÃæµÄÁ½¸öTextView ID  
+//             new int[] {R.id.listview_1,R.id.listview_2});  
+//	 		//Ìí¼Ó²¢ÇÒÏÔÊ¾  
+//	 		list.setAdapter(mSchedule); 	    
 	}
+	
 
+  
+  
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

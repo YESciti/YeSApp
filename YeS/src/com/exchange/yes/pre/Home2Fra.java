@@ -26,11 +26,11 @@ public class Home2Fra extends Fragment implements OnClickListener {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.activity_quick_trade, null);
-
+		
 		return v;
 		
 	}
-
+	
 	private void init(View v) {
 		// main_bg = (LinearLayout)v.findViewById(R.id.message_layout_bg);
 		// title_bg = (RelativeLayout)v.findViewById(R.id.title_message);

@@ -6,6 +6,7 @@ import java.util.TimerTask;
 import com.exchange.yes.R;
 import com.exchange.yes.R.id;
 import com.exchange.yes.R.layout;
+import com.exchange.yes.app.Home1Fra;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -121,7 +122,7 @@ public class HomeActivity extends FragmentActivity implements OnClickListener {
      * ÇÐ»»fragement
      */
     private void changePerson() {
-        Fragment f = new Home1Fra();
+        Fragment f = new Home2Fra();
         if (null == mFM)
             mFM = getSupportFragmentManager();
         FragmentTransaction ft = mFM.beginTransaction();
