@@ -13,20 +13,26 @@ import com.exchange.yes.dep.FloatingActionsMenu;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-public class HomePage_Activity extends Activity {
+public class HomePage_Activity extends FragmentActivity {
 
 	public static int flag = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		try{
 		setContentView(R.layout.activity_homepage);
-		
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		
 		final View action_personal = findViewById(R.id.action_personal);
 		final View action_mall = findViewById(R.id.action_mall);

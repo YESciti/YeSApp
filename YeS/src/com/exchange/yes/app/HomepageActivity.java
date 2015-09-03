@@ -49,6 +49,7 @@ public class HomepageActivity extends Activity{
 		}
 		Log.i("homepage","right2;");
 		
+		
 		final View action_personal = findViewById(R.id.action_personal);
 		final View action_mall = findViewById(R.id.action_mall);
 //		final View action_infor = findViewById(R.id.action_infor);
