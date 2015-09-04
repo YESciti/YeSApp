@@ -1,5 +1,6 @@
 package com.exchange.yes.app;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.annotation.SuppressLint;
@@ -102,4 +103,7 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 		}
 	}
 
+	public void freshadapter(ArrayList<TradeItem> mylist){
+		normalAdapter.freshData(mylist);
+	}
 }

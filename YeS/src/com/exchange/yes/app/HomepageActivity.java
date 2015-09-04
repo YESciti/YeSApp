@@ -24,12 +24,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.view.MotionEvent;
 import com.exchange.yes.R;
+import com.gc.materialdesign.views.Button;
 
 import com.exchange.yes.adapter.SpinnerAdapter;
 import com.exchange.yes.db.TradeItem;
@@ -40,13 +42,15 @@ import com.exchange.yes.service.OnGetMessageListener;
 
 
 
-public class HomepageActivity extends FragmentActivity{
+public class HomepageActivity extends FragmentActivity implements OnClickListener{
 
 	public static int flag = 0;
 	public static Boolean islistok= false;
 	public static ArrayList<TradeItem> mylist = new ArrayList<TradeItem>(); 
+	public static ArrayList<TradeItem> newlist = new ArrayList<TradeItem>(); 
 	public static Home1Fra homefragment=null;
 	private Spinner spinner;
+	
 	
 	
 	//service
@@ -174,7 +178,9 @@ public class HomepageActivity extends FragmentActivity{
 		spinner.setAdapter(currecyspin);
 	    
 	    
-	    
+//button
+		Button btn_fresh = (Button)findViewById(R.id.btn_fresh);
+		btn_fresh.setOnClickListener(this);
 	    
 	    
 	    
@@ -222,7 +228,8 @@ public class HomepageActivity extends FragmentActivity{
 		FragmentTransaction ft = manager.beginTransaction();
 	    
 		 homefragment= new Home1Fra();
-		 freshTradeList();
+		
+		 //freshTradeList();
 		 Log.i("list","homeinit"+HomepageActivity.mylist.size());
 
 		 try{
@@ -252,6 +259,8 @@ public class HomepageActivity extends FragmentActivity{
 		}	
 	}
 	
+	
+	
 	private void freshTradeList(){
 		if(mylist.size()==0)
 		{
@@ -262,9 +271,38 @@ public class HomepageActivity extends FragmentActivity{
 			TradeItem item=new TradeItem("买","11","22");
 			mylist.add(item);
 		}
-		else if(true){};
+		else if(serviceBound == true  ){
+			mylist.clear();
+			mylist=newlist;
+		};
 	}
-	
+	private void setTradeList(){
+		newlist.clear();
+		for (int i=0;i<10;i++)
+		{  TradeItem item=new TradeItem();
+			
+			if(i<5)
+			{
+				item=new TradeItem("卖",i+"",i+"");
+				newlist.add(item);
+			}else if(i>=5)
+			{
+				item=new TradeItem("买",i+"",i+"");
+				newlist.add(item);
+			}				
+		}
+	}
+
+
+
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		setTradeList();
+		freshTradeList();
+		homefragment.freshadapter(newlist);
+	}
 	
 }
  	
