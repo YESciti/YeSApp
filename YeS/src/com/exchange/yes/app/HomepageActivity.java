@@ -221,16 +221,18 @@ public class HomepageActivity extends FragmentActivity{
 		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction ft = manager.beginTransaction();
 	    
-		 homefragment= new Home1Fra();	
-		 Log.i("frag","run");
+		 homefragment= new Home1Fra();
+		 freshTradeList();
+		 Log.i("list","homeinit"+HomepageActivity.mylist.size());
+
 		 try{
 		 ft.replace(android.R.id.tabcontent,homefragment,"consult_fragment_tag");
 		 ft.commit();
 		 }
 		 catch(Exception e)
 		 {
-			 e.printStackTrace();
-			 }
+		 e.printStackTrace();
+		}
 	}
 	
 	
@@ -257,7 +259,10 @@ public class HomepageActivity extends FragmentActivity{
 //	        map.put("ItemTitle", "This is Title.....");  
 //	        map.put("ItemText", i+"");  
 //	        mylist.add(map);  
+			TradeItem item=new TradeItem("买","11","22");
+			mylist.add(item);
 		}
+		else if(true){};
 	}
 	
 	

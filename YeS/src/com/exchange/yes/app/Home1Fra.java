@@ -42,7 +42,7 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-	 view = inflater.inflate(R.layout.homefra1, null);
+	 view = inflater.inflate(R.layout.homefra1,container, false);
 		
 		
 	
@@ -74,16 +74,20 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 			 item.getask("Âò");
 			 item.getprice("111");
 			 item.getnumber("222");
+			 Log.i("list","runright"+HomepageActivity.mylist.size());
 			 HomepageActivity.mylist.add(item);
+			 Log.i("list","runright"+HomepageActivity.mylist.size());
 		 }else {}		 
-		 Log.i("list","run");
+		 Log.i("list","runright");
 		 initHAdapter();
+		 Log.i("list","runinit"+HomepageActivity.mylist.size());
 	}
 
 	private void initHAdapter() {
 		// TODO Auto-generated method stub
 		FragmentManager fragmentManager = getFragmentManager();
 		normalAdapter =new NormalAdapter(activity, HomepageActivity.mylist, fragmentManager);
+		
 		listview.setAdapter(normalAdapter);
 	}
 

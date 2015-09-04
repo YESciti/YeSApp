@@ -39,7 +39,19 @@ public class UserInfo extends Model{
 		super();
 	}
 	
-	public static UserInfo getNameId(String cookie) {
-		return new Select().from(UserInfo.class).where("Cookie = ?", cookie).executeSingle();
+	public UserInfo(String pk_a__user_id, String a_user_name,String a_user_psd,String a_user_phone,
+			 String a_user_emai, String a_user_open_time, String a_user_update_time) {
+		this.pk_a__user_id = pk_a__user_id;
+		this.a_user_name = a_user_name;
+		this.a_user_psd = a_user_psd;
+		this.a_user_phone = a_user_phone;
+		this.a_user_emai = a_user_emai;
+		this.a_user_open_time = a_user_open_time;
+		this.a_user_update_time = a_user_update_time;
+	}
+
+	
+	public static UserInfo getNameId(String pk_a__user_id) {
+		return new Select().from(UserInfo.class).where("pk_a__user_id = ?", pk_a__user_id).executeSingle();
 	}
 }

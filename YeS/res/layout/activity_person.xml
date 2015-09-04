@@ -160,7 +160,7 @@
              android:layout_height="wrap_content"
              android:layout_alignParentBottom="true"
              android:layout_alignParentLeft="true"
-             android:text="@string/bangding"
+             android:text="绑定"
              android:textSize="18sp" 
            />
 

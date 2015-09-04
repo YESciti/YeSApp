@@ -13,24 +13,48 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-<RelativeLayout
-    android:id="@+id/spinnerlayout"
-    android:layout_width="fill_parent"
-    android:layout_height="70sp"
-    android:layout_below="@+id/introduce" >
+ <RelativeLayout
+     android:id="@+id/spinnerlayout"
+     android:layout_width="fill_parent"
+     android:layout_height="70sp"
+     android:layout_below="@+id/introduce" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="请选择要查看的币种"
-        android:textSize="18sp" />
+     <Spinner
+         android:id="@+id/cur_spinner"
+         android:layout_width="200sp"
+         android:layout_height="50dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentLeft="true"
+         android:layout_below="@+id/view1"
+         android:layout_toLeftOf="@+id/btn_log_s" />
 
-    <Spinner
-        android:id="@+id/cur_spinner"
-        android:layout_width="fill_parent"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" />
-</RelativeLayout>
+     <com.gc.materialdesign.views.ButtonRectangle
+         android:id="@+id/btn_fresh"
+         android:layout_width="100sp"
+         android:layout_height="50dp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+         android:layout_below="@+id/view1"
+         android:background="#fffffe"
+         android:text="刷新"
+         android:textColor="#000000" >
+     </com.gc.materialdesign.views.ButtonRectangle>
+
+     <View
+         android:layout_width="fill_parent"
+         android:layout_height="1dp"
+         android:layout_alignBottom="@+id/textView1"
+         android:layout_alignParentLeft="true"
+         android:background="#1E88E5" />
+
+     <TextView
+         android:id="@+id/textView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:text="请选择要查看的币种"
+         android:textSize="18sp" />
+ </RelativeLayout>
 
 </RelativeLayout>

@@ -88,13 +88,13 @@ public class NormalAdapter  extends BaseAdapter{
 					null);
 			viewHolder.askbid=(TextView) convertView
 					.findViewById(R.id.listview_1);
-			viewHolder.askbid.setText("Âò");
+			
 			viewHolder.price=(TextView) convertView
 					.findViewById(R.id.listview_2);
-			viewHolder.price.setText("3.168");
+			
 			viewHolder.number=(TextView) convertView
 					.findViewById(R.id.listview_3);
-			viewHolder.number.setText("12345");
+			
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();

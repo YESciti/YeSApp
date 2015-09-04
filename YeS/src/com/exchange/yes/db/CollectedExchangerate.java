@@ -49,6 +49,23 @@ public class CollectedExchangerate extends Model implements Serializable{
 	public String timestamp;
 
 	
+	public  CollectedExchangerate(String currencyleftcode, int currencyleft, String currencyrightcode,int currencyright,int coId,double rate,int amount) {
+		this.currencyleftcode= currencyleftcode;
+		this.currencyleft= currencyleft;
+		this.currencyrightcode=  currencyrightcode;
+		this.currencyright = currencyright;
+		this.coId = coId;
+		this.rate=rate;
+		this.amount=amount;
+	}
+	
+	public List< CollectedExchangerate> getRate(String currencyleftcode
+			) {
+		return new Select()
+				.from(CollectedExchangerate.class)
+				.where("currencyleftcode= ?" ,currencyleftcode).orderBy("coId")
+				.execute();
+	}
 	
 
 

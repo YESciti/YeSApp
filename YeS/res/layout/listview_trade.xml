@@ -10,7 +10,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
-
+	android:textColor="#000000"
     android:textSize="20sp" />
 
 
@@ -20,6 +20,7 @@
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
+    android:textColor="#000000"
     android:textSize="20sp" />
 <TextView
     android:id="@+id/listview_3"
@@ -28,6 +29,7 @@
     android:layout_alignParentRight="true"
     android:layout_alignParentTop="true"
     android:layout_marginRight="24dp"
+    android:textColor="#000000"
     android:textSize="20sp" />
 
 
