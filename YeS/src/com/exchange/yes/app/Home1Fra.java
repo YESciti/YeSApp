@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,24 +32,25 @@ import com.exchange.yes.adapter.NormalAdapter;
 public class Home1Fra extends ListFragment implements OnClickListener {
 	
 	public NormalAdapter normalAdapter;
-	public static ListView tradelist;
 	View view=null;
-	public static ListView listview;
+	public  ListView listview;
 	private Activity activity=getActivity();
 	private Context content;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-	 view = inflater.inflate(R.layout.homefra1, container,false);
+	 view = inflater.inflate(R.layout.homefra1, null);
 		
 		
-		try {
-			add(view);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
+			try {
+				add(view);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
 
 		return view;
 	}
@@ -64,13 +66,14 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 	private void add(View view)throws Exception {
 
 		// headerIV = (ImageView) v.findViewById(R.id.person2_header_iv);
-		 listview =(ListView)view.findViewById(R.id.tradelistview);
+		 listview =(ListView)view.findViewById(android.R.id.list);
 		 if(HomepageActivity.islistok==false||HomepageActivity.mylist.size()==0){
 			 HashMap<String, String> map = new HashMap<String, String>();  
 		        map.put("ItemTitle", "This is Title.....");  
 		        map.put("ItemText", "1");  
 		        HomepageActivity.mylist.add(map); 
 		 }else {}		 
+		 Log.i("list","run");
 		 initHAdapter();
 	}
 
@@ -78,7 +81,7 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 		// TODO Auto-generated method stub
 		FragmentManager fragmentManager = getFragmentManager();
 		normalAdapter =new NormalAdapter(activity, HomepageActivity.mylist, fragmentManager);
-		tradelist.setAdapter(normalAdapter);
+		listview.setAdapter(normalAdapter);
 	}
 
 	@Override

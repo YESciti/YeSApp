@@ -40,7 +40,7 @@
     </com.gc.materialdesign.views.LayoutRipple>
  
     <com.gc.materialdesign.views.LayoutRipple
-        android:id="@+id/listview"
+        android:id="@+id/listview1"
         android:layout_width="fill_parent"
         android:layout_height="300dp"
          android:layout_below="@+id/introduce"
@@ -63,18 +63,18 @@
     </com.gc.materialdesign.views.LayoutRipple> 
  
        
-	<fragment  
-	        android:id="@+id/homefragment1"  
-	        android:name="com.exchange.yes.app.Home1Fra"
-	        android:layout_below="@+id/listview"  
-	        android:layout_width="fill_parent"  
-	        android:layout_height="300sp" />  
+<FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="300sp"
+        android:id="@android:id/tabcontent" 
+        android:layout_below="@+id/listview1">
 
+    </FrameLayout>
     
     
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart1"
-        android:layout_below="@+id/tradelistview"
+        android:layout_below="@android:id/tabcontent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
        />

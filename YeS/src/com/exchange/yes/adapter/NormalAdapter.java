@@ -87,8 +87,10 @@ public class NormalAdapter  extends BaseAdapter{
 					null);
 			viewHolder.price=(TextView) convertView
 					.findViewById(R.id.listview_2);
+			viewHolder.price.setText("3.168");
 			viewHolder.number=(TextView) convertView
 					.findViewById(R.id.listview_1);
+			viewHolder.number.setText("12345");
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();

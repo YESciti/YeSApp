@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
-import android.app.ActivityManager;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -28,25 +31,25 @@ import com.exchange.yes.dep.FloatingActionsMenu;
 
 
 
-public class HomepageActivity extends Activity{
+
+public class HomepageActivity extends FragmentActivity{
 
 	public static int flag = 0;
 	public static Boolean islistok= false;
 	public static ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>(); 
+	public static Home1Fra homefragment=null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 		Log.i("homepage","right1;");
 		
-		try{
+		
 		setContentView(R.layout.activity_homepage);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+		initFirstFragment();
+		
 		Log.i("homepage","right2;");
 		
 		
@@ -146,8 +149,22 @@ public class HomepageActivity extends Activity{
 		return true;
 	};
 		
+	
+	private void initFirstFragment() {
+		FragmentManager manager = getSupportFragmentManager();
+		FragmentTransaction ft = manager.beginTransaction();
 	    
-	   
+		 homefragment= new Home1Fra();	
+		 Log.i("frag","run");
+		 try{
+		 ft.replace(android.R.id.tabcontent,homefragment,"consult_fragment_tag");
+		 ft.commit();
+		 }
+		 catch(Exception e)
+		 {
+			 e.printStackTrace();
+			 }
+	}
 	}
 
 
