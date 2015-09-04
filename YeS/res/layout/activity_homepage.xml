@@ -8,18 +8,15 @@
          android:layout_height="match_parent"
          android:layout_weight="1.0" > 
 
-
-
-<RelativeLayout 
-
-    android:background="#ffffff"
+<RelativeLayout
+    android:background="#ffffff"    
     android:layout_width="match_parent"
     android:layout_height="1200sp" >
  
    
 <com.gc.materialdesign.views.LayoutRipple
         android:id="@+id/introduce"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="#1E88E5"
         android:clickable="true" >
@@ -35,15 +32,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            
+            android:textSize="18sp"
             android:text="产品介绍部分" />
     </com.gc.materialdesign.views.LayoutRipple>
- 
-    <com.gc.materialdesign.views.LayoutRipple
+  
+	<RelativeLayout
+    android:id="@+id/spinnerlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="70sp"
+    android:layout_below="@+id/introduce" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择要查看的币种"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/cur_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+</RelativeLayout>
+  <!--   <com.gc.materialdesign.views.LayoutRipple
         android:id="@+id/listview1"
         android:layout_width="fill_parent"
         android:layout_height="300dp"
-         android:layout_below="@+id/introduce"
+         android:layout_below="@+id/cur_spinner"
         android:background="#E85"
         android:clickable="true" >
 
@@ -59,30 +75,32 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             
-            android:text=" 外币价格表 " />
-    </com.gc.materialdesign.views.LayoutRipple> 
+            android:text=" 外币价格表 " /> 
+    </com.gc.materialdesign.views.LayoutRipple> -->
  
-       
-<FrameLayout
-        android:layout_width="fill_parent"
+    
+	<FrameLayout
+        android:layout_width="match_parent"
+       android:layout_below="@+id/spinnerlayout"
         android:layout_height="300sp"
         android:id="@android:id/tabcontent" 
-        android:layout_below="@+id/listview1">
+        >
 
     </FrameLayout>
     
-    
+
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart1"
         android:layout_below="@android:id/tabcontent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        
        />
 
-</RelativeLayout>
 
 
 
+  </RelativeLayout> 
 
 
 

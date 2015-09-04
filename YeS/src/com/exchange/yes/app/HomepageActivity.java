@@ -4,11 +4,16 @@ package com.exchange.yes.app;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import android.app.Activity;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -21,14 +26,17 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.view.MotionEvent;
 import com.exchange.yes.R;
 
+import com.exchange.yes.adapter.SpinnerAdapter;
+import com.exchange.yes.db.TradeItem;
 import com.exchange.yes.dep.FloatingActionButton;
 import com.exchange.yes.dep.FloatingActionsMenu;
-
-
+import com.exchange.yes.service.MessageService;
+import com.exchange.yes.service.OnGetMessageListener;
 
 
 
@@ -36,8 +44,34 @@ public class HomepageActivity extends FragmentActivity{
 
 	public static int flag = 0;
 	public static Boolean islistok= false;
-	public static ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>(); 
+	public static ArrayList<TradeItem> mylist = new ArrayList<TradeItem>(); 
 	public static Home1Fra homefragment=null;
+	private Spinner spinner;
+	
+	
+	//service
+	private boolean serviceBound = false;  
+	private  MessageService localService;
+	private ServiceConnection serviceConnection = new ServiceConnection() {
+		// 已经绑定了LocalService，强转IBinder对象，调用方法得到LocalService对象  
+		@Override
+		public void onServiceConnected(ComponentName className,  
+                IBinder service) {
+			// TODO Auto-generated method stub
+			 MessageService.MsgBinder binder = ( MessageService.MsgBinder) service;  
+	            
+	            localService = binder.getService();  
+	            System.out.println("test416 onServiceConnected onCreate");
+	            MessageService.onGetMessageListener = new Listener();
+	            serviceBound = true;  
+		}
+		
+		@Override
+		public void onServiceDisconnected(ComponentName arg0) {
+			// TODO Auto-generated method stub
+			serviceBound = false;  
+		}
+	};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -132,7 +166,12 @@ public class HomepageActivity extends FragmentActivity{
 	      }
 	    });
 	    
-	    
+	    //spinner
+	    spinner=(Spinner)findViewById(R.id.cur_spinner);
+	    List<Map<String, Object>> currencyspinner=SpinnerAdapter.getspinner3data();
+	    SimpleAdapter currecyspin=new SimpleAdapter(this, currencyspinner, R.layout.spinner3_item, new String[]{"log","listname"}, new int[]{R.id.image,R.id.text});
+		//给spinner添加adapter
+		spinner.setAdapter(currecyspin);
 	    
 	    
 	    
@@ -193,6 +232,34 @@ public class HomepageActivity extends FragmentActivity{
 			 e.printStackTrace();
 			 }
 	}
+	
+	
+	
+	class Listener implements OnGetMessageListener {
+
+		@Override
+		public void onRefreshState() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onRefreshlistState() {
+			// TODO Auto-generated method stub
+			
+		}	
 	}
-
-
+	
+	private void freshTradeList(){
+		if(mylist.size()==0)
+		{
+//	        HashMap<String, String> map = new HashMap<String, String>();  
+//	        map.put("ItemTitle", "This is Title.....");  
+//	        map.put("ItemText", i+"");  
+//	        mylist.add(map);  
+		}
+	}
+	
+	
+}
+ 	

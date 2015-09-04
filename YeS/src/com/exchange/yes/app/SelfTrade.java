@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import com.exchange.yes.R;
 import com.exchange.yes.R.id;
 import com.exchange.yes.R.layout;
-import com.exchange.yes.adapter.dapter;
+import com.exchange.yes.adapter.SpinnerAdapter;
 
 public class SelfTrade extends Activity {
 
@@ -27,12 +27,12 @@ public class SelfTrade extends Activity {
 		spinner=(Spinner)findViewById(R.id.spinner);
 		//获取数据
 		
-		List<Map<String, Object>> spinnerdata3=dapter.getspinner3data();
+		List<Map<String, Object>> currencyspinner=SpinnerAdapter.getspinner3data();
 		//设置adapter
 	
-		SimpleAdapter spinner3adAdapter=new SimpleAdapter(this, spinnerdata3, R.layout.spinner3_item, new String[]{"log","listname"}, new int[]{R.id.image,R.id.text});
+		SimpleAdapter currecyspin=new SimpleAdapter(this, currencyspinner, R.layout.spinner3_item, new String[]{"log","listname"}, new int[]{R.id.image,R.id.text});
 		//给spinner添加adapter
-		spinner.setAdapter(spinner3adAdapter);
+		spinner.setAdapter(currecyspin);
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override

@@ -32,7 +32,7 @@ public class MessageService extends Service {
 	
 	
 	//²ÎÊıÇø
-	public OnGetMessageListener onGetMessageListener;
+	public static OnGetMessageListener onGetMessageListener;
 	public boolean isCancel=false;
 	public boolean isActivityPause=false;
 	public boolean ispoll=false;

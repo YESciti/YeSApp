@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 
+import android.content.ClipData.Item;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.widget.ListView;
 
 import com.exchange.yes.R;
 import com.exchange.yes.adapter.NormalAdapter;
+import com.exchange.yes.db.TradeItem;
 
 /**
  * home1
@@ -68,10 +70,11 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 		// headerIV = (ImageView) v.findViewById(R.id.person2_header_iv);
 		 listview =(ListView)view.findViewById(android.R.id.list);
 		 if(HomepageActivity.islistok==false||HomepageActivity.mylist.size()==0){
-			 HashMap<String, String> map = new HashMap<String, String>();  
-		        map.put("ItemTitle", "This is Title.....");  
-		        map.put("ItemText", "1");  
-		        HomepageActivity.mylist.add(map); 
+			 TradeItem item=new TradeItem();
+			 item.getask("Âò");
+			 item.getprice("111");
+			 item.getnumber("222");
+			 HomepageActivity.mylist.add(item);
 		 }else {}		 
 		 Log.i("list","run");
 		 initHAdapter();

@@ -14,6 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.exchange.yes.R;
+import com.exchange.yes.db.TradeItem;
 
 
 
@@ -21,13 +22,13 @@ import com.exchange.yes.R;
 public class NormalAdapter  extends BaseAdapter{
 
 	//public  List<>
-	public ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
+	public ArrayList<TradeItem> mylist = new ArrayList<TradeItem>();
 	private Context context;
 	private LayoutInflater layoutInflater;
 	private FragmentManager fragmentManager;
 	
 	
-	 public NormalAdapter(Context context, ArrayList<HashMap<String, String>> mylist,
+	 public NormalAdapter(Context context,ArrayList<TradeItem> mylist,
 				FragmentManager fragmentManager2)
 	 {
 		 this.context = context;
@@ -36,18 +37,18 @@ public class NormalAdapter  extends BaseAdapter{
 		 this.fragmentManager = fragmentManager2;
 	 }
 	 
-	 public void addMessage(HashMap<String, String> list) {
+	 public void addMessage(TradeItem list) {
 			// list.add(0, msg);
 			mylist.add(list);
 			notifyDataSetChanged();
 		}
 
-	public void freshData(ArrayList<HashMap<String, String>> mylist) {
+	public void freshData(ArrayList<TradeItem> mylist) {
 			this.mylist = mylist;
 			notifyDataSetChanged();
 		}
 	
-	public void addMessages(ArrayList<HashMap<String, String>> mylist) {
+	public void addMessages(ArrayList<TradeItem> mylist) {
 		// list.add(0, msg);
 		mylist.addAll(mylist);
 		notifyDataSetChanged();
@@ -85,11 +86,14 @@ public class NormalAdapter  extends BaseAdapter{
 			viewHolder = new ViewHolder();
 			convertView = layoutInflater.inflate(R.layout.listview_trade,
 					null);
+			viewHolder.askbid=(TextView) convertView
+					.findViewById(R.id.listview_1);
+			viewHolder.askbid.setText("Âò");
 			viewHolder.price=(TextView) convertView
 					.findViewById(R.id.listview_2);
 			viewHolder.price.setText("3.168");
 			viewHolder.number=(TextView) convertView
-					.findViewById(R.id.listview_1);
+					.findViewById(R.id.listview_3);
 			viewHolder.number.setText("12345");
 			convertView.setTag(viewHolder);
 		} else {
@@ -101,6 +105,7 @@ public class NormalAdapter  extends BaseAdapter{
 	
 	}
 	class ViewHolder{
+		TextView askbid;
 		TextView price;
 		TextView number;}
 
