@@ -36,7 +36,6 @@
     <string name="txt_dingwei">当前定位</string>
     <string name="sichuan">四川</string>
     <string name="all">全部</string>
-    <string name="diqu">地区</string>
     <string name="title_activity_shiming">ShimingActivity</string>
     <string name="Id">身份证号</string>
     <string name="realname">真实姓名</string>
@@ -61,8 +60,6 @@
     <string name="title_activity_binding">BindingActivity</string>
     <string name="title_activity_record">RecordActivity</string>
     <string name="title_activity_quick_trade">QuickTradeActivity</string>
-    
-    
     <string name="shichanghuilv">市场汇率</string>
     <string name="meijin">美金</string>
     <string name="sanshi">30</string>
@@ -80,12 +77,8 @@
     <string name="shurujine">输入金额</string>
     <string name="huilvmaohao">汇率 ：</string>
     <string name="liu">6.0</string>
-    
-    
-    
-     <string name="app_name">YesLayout</string>
+    <string name="app_name">YesLayout</string>
     <string name="action_settings">Settings</string>
-    
     <string name="title_activity_ask">AskActivity</string>
     <string name="title_activity_ask_quick">AskQuickActivity</string>
     <string name="title_activity_ask_cusrom">AskCusromActivity</string>
@@ -100,6 +93,76 @@
         <item>人民币</item>
     </string-array>
 
+    <string name="shezhi">设置</string>
+    <string name="exit">退出登录</string>
+    <string name="yes">Yes!</string>
+    <string name="title_activity_touxiang">Yes!</string>
+    <string name="name">姓名</string>
+    <string name="touxiang">头像</string>
+    <string name="nicheng">昵称</string>
+    <string name="weishezhi">未设置</string>
+    <string name="yonghuming">用户名</string>
+    <string name="sex">性别</string>
+    <string name="txt_place">地区</string>
+    <string name="shanghai">上海</string>
+    <string name="txt_shiming">实名认证</string>
+    <string name="bangding">绑定手机</string>
+    <string name="txt_zhaopian">从照片中选一张</string>
+    <string name="txt_camera">拍一张照片</string>
+    <string name="title_activity_place">PlaceActivity</string>
+    <string name="all">全部</string>
+    <string name="diqu">地区</string>
+    <string name="realname">真实姓名</string>
+    <string name="bangdingshouji">绑定手机</string>
+    <string name="txt_genghuanshouji">手机认证：</string>
+    <string name="title_activity_recode">RecodeActivity</string>
+    <string name="txt_qsrmm">请输入原密码</string>
+    <string name="txt_newcode">新密码</string>
+    <string name="txt_qrnew">确认新密码</string>
+    <string name="sure">确认</string>
+    <string name="choose_sex">请选择您的性别：</string>
+    <string name="youxiangshezhi">邮箱认证：</string>
+    <string name="shezhinicheng">昵称：</string>
+    <string name="shezhixingming">用户名：</string>
+    <string name="txt_sex">性别：</string>
+    <string name="email">邮箱</string>
+    <string name="tijiao">提交</string>
+    <string name="chakan">查看我的账户</string>
+    <string name="meiyuan">美元</string>
+    <string name="rmb">人民币</string>
+    <string name="hundred">60</string>
+    <string name="gerenzhongxin">个人信息</string>
+    <string name="anquanzhongixn">安全中心</string>
+    <string name="jiaoyijilu">交易记录</string>
+    <string name="zhifu">支付方式</string>
+    <string name="youhui">我的优惠</string>
+    <string name="txt_id">身份认证：</string>
+    <string name="txt_xiugaimima">修改密码</string>
+    <string name="txt_anquanbaohu">安全保护</string>
+    <string name="save">保存</string>
+    <string name="xiugaitouxiang">修改头像</string>
+    <string name="bianji">编辑</string>
+    <string name="zidingyi">自定义交易</string>
+    <string name="jiaoyileixing">交易类型</string>
+    <string name="huilvshezhi">汇率设置</string>
+    <string name="one">1</string>
+    <string name="dengyu">=</string>
+    <string name="yuan">元</string>
+    <string name="shi">10</string>
+    <string name="tuichu">退出登录</string>
+    <string name="title_activity_person">Person</string>
+    <string name="place">地区</string>
+    <string name="shanghai">上海</string>
+    <string name="xingbie">性别</string>
+    <string name="nv_sex">女</string>
+    <string name="youxiang">邮箱地址</string>
     <string name="title_activity_homepage">FAB_Activity</string>
+    <string name="title_activity_mall">MallActivity</string>
+    <string name="title_activity_editbl_rat_trad">EditblRatTradActivity</string>
+    <string name="title_activity_ask_editbl_rat">AskEditblRatActivity</string>
+    <string name="yi">1</string>
+    <string name="title_activity_re_person">RePerson</string>
+    <string name="title_activity_secure">Secure</string>
+    <string name="title_activity_self_trade">SelfTrade</string>
 
 </resources>

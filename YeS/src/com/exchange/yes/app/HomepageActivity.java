@@ -94,11 +94,39 @@ public class HomepageActivity extends FragmentActivity{
 	    
 
 
-	    final FloatingActionButton action_qex = (FloatingActionButton) findViewById(R.id.action_qexchange);
-	    action_qex.setOnClickListener(new OnClickListener() {
+	    
+//个人中心
+	    action_personal.setOnClickListener(new OnClickListener() {
 	      @Override
 	      public void onClick(View view) {
-	    	 Intent quickIntent = new Intent(HomepageActivity.this,AskCusromActivity.class);
+	    	 Intent quickIntent = new Intent(HomepageActivity.this,MineActivity.class);
+	 		 startActivity(quickIntent);
+	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
+	      }
+	    });
+//市场
+	    action_mall.setOnClickListener(new OnClickListener() {
+	      @Override
+	      public void onClick(View view) {
+	    	 Intent quickIntent = new Intent(HomepageActivity.this,MallActivity.class);
+	 		 startActivity(quickIntent);
+	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
+	      }
+	    });
+//快速交易
+	    action_qexchange.setOnClickListener(new OnClickListener() {
+	      @Override
+	      public void onClick(View view) {
+	    	 Intent quickIntent = new Intent(HomepageActivity.this,QuickTradeActivity.class);
+	 		 startActivity(quickIntent);
+	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
+	      }
+	    });
+//自定义交易	  
+	    action_cexchange.setOnClickListener(new OnClickListener() {
+	      @Override
+	      public void onClick(View view) {
+	    	 Intent quickIntent = new Intent(HomepageActivity.this,EditblRatTradActivity.class);
 	 		 startActivity(quickIntent);
 	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
 	      }

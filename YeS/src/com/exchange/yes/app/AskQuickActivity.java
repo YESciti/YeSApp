@@ -6,6 +6,7 @@ import com.exchange.yes.R.layout;
 import com.exchange.yes.R.menu;
 import com.exchange.yes.dep.FloatingActionButton;
 import com.exchange.yes.dep.FloatingActionsMenu;
+import com.gc.materialdesign.widgets.Dialog;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -17,65 +18,34 @@ import android.widget.Toast;
 
 public class AskQuickActivity extends Activity {
 
-	public static int flag = 0;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ask_quick);
-		
-		final View action_personal = findViewById(R.id.action_personal);
-		final View action_mall = findViewById(R.id.action_mall);
-		final View action_infor = findViewById(R.id.action_infor);
-		final View action_qexchange =findViewById(R.id.action_qexchange);
-		final View action_cexchange =findViewById(R.id.action_cexchange);
-		
-		
-	    FloatingActionButton blue_sFAB = new FloatingActionButton(getBaseContext());
-	    blue_sFAB.setTitle("½»Ò×");
-	    blue_sFAB.setOnClickListener(new OnClickListener() {
-	      @Override
-	      public void onClick(View v) {
-	    	  if (flag == 0) {  
-	    		  action_personal.setVisibility(action_personal.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
-	    		  action_mall.setVisibility(action_mall.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
-	    		  action_infor.setVisibility(action_infor.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
-	    		  action_qexchange.setVisibility(action_qexchange.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
-	    		  action_cexchange.setVisibility(action_cexchange.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
-	    		
-	    		  flag = 1;
-	      } else {
-	    	  	action_personal.setVisibility(action_personal.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
-	    	  	action_mall.setVisibility(action_mall.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
-	    	  	action_infor.setVisibility(action_infor.getVisibility() == View.GONE ? View.VISIBLE : View.VISIBLE);
-	    	  	action_qexchange.setVisibility(action_qexchange.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
-	    	  	action_cexchange.setVisibility(action_cexchange.getVisibility() == View.GONE ? View.VISIBLE : View.GONE);
-	    	  	
-	    	  	flag = 0;
-	      }
-	      }
-	    });
-
-	    final FloatingActionsMenu menuMultipleActions = (FloatingActionsMenu) findViewById(R.id.multiple_actions);
-	    menuMultipleActions.addButton(blue_sFAB);
-	    
-
-
-	    final FloatingActionButton action_qex = (FloatingActionButton) findViewById(R.id.action_qexchange);
-	    action_qex.setOnClickListener(new OnClickListener() {
-	      @Override
-	      public void onClick(View view) {
-	    	 Intent quickIntent = new Intent(AskQuickActivity.this,AskQuickActivity.class);
-	 		 startActivity(quickIntent);
-	        Toast.makeText(AskQuickActivity.this, "right", Toast.LENGTH_SHORT).show();
-	      }
-	    });
+//		
+		findViewById(R.id.btn_finish_quickDeal).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(final View flatButton) {
+				Dialog dialog = new Dialog(AskQuickActivity.this, "Title", "detail");
+				dialog.setOnAcceptButtonClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v){
+						Intent adkQuickIntent=new Intent(AskQuickActivity.this,HomepageActivity.class);
+						startActivity(adkQuickIntent);
+						Toast.makeText(AskQuickActivity.this, "Click accept button", 1).show();
+					}
+				});
+				dialog.show();
+			}
+		});
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.about, menu);
+		getMenuInflater().inflate(R.menu.ask_editbl_rat, menu);
 		return true;
 	}
 
