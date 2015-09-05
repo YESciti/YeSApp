@@ -9,6 +9,7 @@ import com.activeandroid.ActiveAndroid;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
 @Table(name = "TimeSerises")
 public class TimeSerises extends Model implements Serializable{
@@ -57,6 +58,12 @@ public class TimeSerises extends Model implements Serializable{
 			ActiveAndroid.endTransaction();
 		}
 	}
-	
+	public void clear(int a_time_currency_codenum)
+	{
+		new Delete()
+		.from(TimeSerises.class)
+		.where("a_time_currency_codenum= ?" ,a_time_currency_codenum)
+		.execute();		
+	}
 	
 }

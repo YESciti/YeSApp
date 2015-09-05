@@ -221,13 +221,15 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      //初始化
 	      mChart.setNoDataTextDescription("You need to provide data for the chart.");
 	      //设置部分属性
+	      mChart.setDescription("");// 数据描述  
 	      mChart.setHighlightEnabled(true);
 	      mChart.setTouchEnabled(true);
 	      mChart.setDragEnabled(false);
 	      mChart.setScaleEnabled(true);
 	      mChart.setPinchZoom(true);
-	      mChart.setBackgroundColor(Color.LTGRAY);
-	      
+	      mChart.setBackgroundColor(Color.WHITE);
+//	      mChart.centerViewPort(1, 1);
+	    
 	      //markview
 	      MyMarkerView mv = new MyMarkerView(this, R.layout.custom_marker_view);
 	      mChart.setMarkerView(mv);
@@ -366,7 +368,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	//生成并储存
 	public void testtimeserise()
 	{
-		ArrayList<String> xVals = new ArrayList<String>();
+		
 		List<TimeSerises> list =new ArrayList<TimeSerises>() ;
 		TimeSerises item1=new TimeSerises();
         for (int i = 0; i < 40; i++) {
@@ -379,7 +381,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
         }
         
         item1.setTimeSeries(list);
-        List<TimeSerises> test=item1.getalltimeSerises();
+        List<TimeSerises> test=item1.getTimeSerises(1);
         Log.i("shujuku",item1.getalltimeSerises().get(2).a_time_currency_codenum+"");
         Log.i("shujuku",item1.getalltimeSerises().get(2).a_time_price+"");
 	}
