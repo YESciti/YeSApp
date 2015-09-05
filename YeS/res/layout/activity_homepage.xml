@@ -11,13 +11,13 @@
 <RelativeLayout
     android:background="#ffffff"    
     android:layout_width="match_parent"
-    android:layout_height="1200sp" >
+    android:layout_height="1000sp" >
  
    
 <com.gc.materialdesign.views.LayoutRipple
         android:id="@+id/introduce"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:background="#1E88E5"
         android:clickable="true" >
 
@@ -34,8 +34,16 @@
             android:layout_centerVertical="true"
             android:textSize="18sp"
             android:text="产品介绍部分" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#88CECECE" />
     </com.gc.materialdesign.views.LayoutRipple>
-  
+  <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="298sp"
+            android:background="#88CECECE" />
 	
  <RelativeLayout
      android:id="@+id/spinnerlayout"
@@ -81,29 +89,9 @@
          android:textSize="18sp" />
  </RelativeLayout>
 
-  <!--   <com.gc.materialdesign.views.LayoutRipple
-        android:id="@+id/listview1"
-        android:layout_width="fill_parent"
-        android:layout_height="300dp"
-         android:layout_below="@+id/cur_spinner"
-        android:background="#E85"
-        android:clickable="true" >
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerVertical="true"
-             android:layout_centerHorizontal="true"
-             android:src="@drawable/icn_widget"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            
-            android:text=" 外币价格表 " /> 
-    </com.gc.materialdesign.views.LayoutRipple> -->
  
+ 
+  	
     
 	<FrameLayout
         android:layout_width="match_parent"
@@ -114,10 +102,37 @@
 
     </FrameLayout>
     
-
+	<View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/spinnerlayout"
+            android:background="#88CECECE" />	
+   <com.gc.materialdesign.views.LayoutRipple
+        android:id="@+id/listvi"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@android:id/tabcontent"
+        android:background="#ffffff"
+        android:clickable="true" >
+    	<View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            
+            android:background="#88CECECE" />	
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text=" 外币价格走势 " /> 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            
+            android:background="#88CECECE" />	
+    </com.gc.materialdesign.views.LayoutRipple> 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart1"
-        android:layout_below="@android:id/tabcontent"
+        android:layout_below="@+id/listvi"
         android:layout_width="match_parent"
         android:layout_height="300sp"
         

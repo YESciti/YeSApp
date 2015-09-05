@@ -6,6 +6,6 @@
      <ListView android:layout_width="fill_parent" 
                   android:layout_height="300sp"                     
                   android:id="@android:id/list"
-                  android:background="@color/background">
+                  android:background="#ffffff">
      </ListView>  
 </LinearLayout>

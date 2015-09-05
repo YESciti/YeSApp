@@ -2,6 +2,7 @@
 package com.exchange.yes.dep;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.exchange.yes.R;
@@ -35,11 +36,12 @@ public class MyMarkerView extends MarkerView {
         if (e instanceof CandleEntry) {
 
             CandleEntry ce = (CandleEntry) e;
-
-            tvContent.setText("" + Utils.formatNumber(ce.getHigh(), 0, true));
+                       
+            tvContent.setText("" + (Utils.formatNumber(ce.getHigh(), 2, true)));
         } else {
-
-            tvContent.setText("" + Utils.formatNumber(e.getVal(), 0, true));
+        	 Log.i("test",""+e.getXIndex());
+            
+            tvContent.setText("" + Utils.formatNumber(e.getVal(), 2, true));
         }
     }
 

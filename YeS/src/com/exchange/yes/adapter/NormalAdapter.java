@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import android.R.layout;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.exchange.yes.R;
@@ -96,8 +100,12 @@ public class NormalAdapter  extends BaseAdapter{
 			viewHolder.number=(TextView) convertView
 					.findViewById(R.id.listview_3);
 			viewHolder.number.setText(mylist.get(pos).number);
-			
+			viewHolder.layout=(RelativeLayout)convertView.findViewById(R.id.TradeListItem);
 			convertView.setTag(viewHolder);
+			
+			if(pos==4||pos==5){
+				viewHolder.layout.setBackgroundColor(Color.parseColor("#1E88E5"));
+			}
 			
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -110,5 +118,6 @@ public class NormalAdapter  extends BaseAdapter{
 	class ViewHolder{
 		TextView askbid;
 		TextView price;
-		TextView number;}
+		TextView number;
+		RelativeLayout layout;}
 
