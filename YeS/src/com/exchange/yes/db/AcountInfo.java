@@ -27,14 +27,14 @@ public class AcountInfo extends Model{
 	@Column(name = "a_acc_balance")
 	public String a_acc_balance;
 	@Column(name = "fk_a_acc_currency_codenum")
-	public String  fk_a_acc_currency_codenum;
+	public int  fk_a_acc_currency_codenum;
 
 	public AcountInfo() {
 		// TODO Auto-generated constructor stub
 		super();
 	}
 	public  AcountInfo(String pk_a_acc_user_id, String a_acc_realname,String a_acc_idcard,String a_acc_bankname,
-			 String a_offer_end_time, String fk_a_recv_user_id) {
+			 String a_offer_end_time, String fk_a_recv_user_id,String a_acc_bankcard_num,String a_acc_balance,int  fk_a_acc_currency_codenum) {
 		this.pk_a_acc_user_id= pk_a_acc_user_id;
 		this.a_acc_realname =a_acc_realname;
 		this.a_acc_idcard = a_acc_idcard ;

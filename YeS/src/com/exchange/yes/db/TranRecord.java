@@ -18,7 +18,7 @@ public class TranRecord extends Model  implements Serializable{
 	@Column(name = "a_traf_balance_add")
 	public String a_traf_balance_add;
 	@Column(name = "fk_a_traf_currency_codenum")
-	public String fk_a_traf_currency_codenum;
+	public int fk_a_traf_currency_codenum;
 	@Column(name = "a_traf_bankname")
 	public String a_traf_bankname;
 	@Column(name = "a_traf_bankcard_num")
@@ -27,7 +27,7 @@ public class TranRecord extends Model  implements Serializable{
 	public String  a_traf_time;
 	
 
-	public TranRecord(String pk_a_traf_id, String fk_a__traf_user_id,String a_traf_balance_add,String fk_a_traf_currency_codenum,
+	public TranRecord(String pk_a_traf_id, String fk_a__traf_user_id,String a_traf_balance_add,int fk_a_traf_currency_codenum,
 			 String a_traf_bankname, String a_traf_bankcard_num, String a_traf_time) {
 		this.pk_a_traf_id = pk_a_traf_id;
 		this.fk_a__traf_user_id = fk_a__traf_user_id;

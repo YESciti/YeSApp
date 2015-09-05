@@ -70,11 +70,11 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 
 		// headerIV = (ImageView) v.findViewById(R.id.person2_header_iv);
 		 listview =(ListView)view.findViewById(android.R.id.list);
-		 if(HomepageActivity.islistok==false||HomepageActivity.mylist.size()==0){
+		 if(HomepageActivity.mylist.size()==0){
 			 TradeItem item=new TradeItem();
 			 item.getask("Âò");
 			 item.getprice("111");
-			 item.getnumber("222");
+			 item.getnumber("223");
 			 Log.i("list","runright"+HomepageActivity.mylist.size());
 			 HomepageActivity.mylist.add(item);
 			 Log.i("list","runright"+HomepageActivity.mylist.size());
@@ -104,6 +104,7 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 	}
 
 	public void freshadapter(ArrayList<TradeItem> mylist){
-		normalAdapter.freshData(mylist);
+		normalAdapter.mylist=mylist;
+		normalAdapter.freshData(normalAdapter.mylist);
 	}
 }

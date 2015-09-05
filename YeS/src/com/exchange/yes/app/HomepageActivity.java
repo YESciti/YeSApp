@@ -2,6 +2,7 @@ package com.exchange.yes.app;
 
 
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +13,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.Fragment;
@@ -26,12 +28,36 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 
 import android.widget.ListView;
+import android.widget.SeekBar;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.view.MotionEvent;
 import com.exchange.yes.R;
 import com.gc.materialdesign.views.Button;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.CandleEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartGestureListener;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.Utils;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.LimitLine;
+import com.github.mikephil.charting.components.MarkerView;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.components.Legend.LegendForm;
+import com.github.mikephil.charting.components.LimitLine.*;
+import com.github.mikephil.charting.components.YAxis.AxisDependency;
+import com.exchange.yes.dep.MyMarkerView;
+
 
 import com.exchange.yes.adapter.SpinnerAdapter;
 import com.exchange.yes.db.TradeItem;
@@ -42,7 +68,8 @@ import com.exchange.yes.service.OnGetMessageListener;
 
 
 
-public class HomepageActivity extends FragmentActivity implements OnClickListener{
+public class HomepageActivity extends FragmentActivity implements OnClickListener,OnSeekBarChangeListener,
+OnChartGestureListener, OnChartValueSelectedListener{
 
 	public static int flag = 0;
 	public static Boolean islistok= false;
@@ -50,7 +77,7 @@ public class HomepageActivity extends FragmentActivity implements OnClickListene
 	public static ArrayList<TradeItem> newlist = new ArrayList<TradeItem>(); 
 	public static Home1Fra homefragment=null;
 	private Spinner spinner;
-	
+	private LineChart mChart;
 	
 	
 	//service
@@ -178,41 +205,78 @@ public class HomepageActivity extends FragmentActivity implements OnClickListene
 		spinner.setAdapter(currecyspin);
 	    
 	    
-//button
+//button刷新
 		Button btn_fresh = (Button)findViewById(R.id.btn_fresh);
 		btn_fresh.setOnClickListener(this);
 	    
-	    
-	    
-	    
-//	    ListView list = (ListView) findViewById(R.id.tradelistview); 
-//	    
-//	    //test
-//	     
-//	    for(int i=0;i<30;i++)  
-//	    {  
-//	        HashMap<String, String> map = new HashMap<String, String>();  
-//	        map.put("ItemTitle", "This is Title.....");  
-//	        map.put("ItemText", i+"");  
-//	        mylist.add(map);  
-//	    }  
-	
-	
-//	//Êý¾Ýadapter
-//	 SimpleAdapter mSchedule = new SimpleAdapter(this, 
-//             mylist,//Êý¾ÝÀ´Ô´   
-//             R.layout.listview_trade,//ListItemµÄXMLÊµÏÖ  
-//               
-//             //¶¯Ì¬Êý×éÓëListItem¶ÔÓ¦µÄ×ÓÏî          
-//             new String[] {"ItemTitle", "ItemText"},   
-//               
-//             //ListItemµÄXMLÎÄ¼þÀïÃæµÄÁ½¸öTextView ID  
-//             new int[] {R.id.listview_1,R.id.listview_2});  
-//	 		//Ìí¼Ó²¢ÇÒÏÔÊ¾  
-//	 		list.setAdapter(mSchedule); 	    
+//图表
+		  mChart = (LineChart) findViewById(R.id.chart1);
+	      mChart.setOnChartGestureListener(this);
+	      mChart.setOnChartValueSelectedListener(this);
+	      mChart.setDrawGridBackground(false);
+	      //初始化
+	      mChart.setNoDataTextDescription("You need to provide data for the chart.");
+	      //设置部分属性
+	      mChart.setHighlightEnabled(true);
+	      mChart.setTouchEnabled(true);
+	      mChart.setDragEnabled(false);
+	      mChart.setScaleEnabled(true);
+	      mChart.setPinchZoom(true);
+	      mChart.setBackgroundColor(Color.LTGRAY);
+	      
+	      //markview
+	      MyMarkerView mv = new MyMarkerView(this, R.layout.custom_marker_view);
+	      mChart.setMarkerView(mv);
+	      
+	    //坐标轴设置
+	      //LimitLine llXAxis = new LimitLine(10f, "Index 10");
+	       // llXAxis.setLineWidth(4f);
+	        //llXAxis.enableDashedLine(10f, 10f, 0f);
+	        //llXAxis.setLabelPosition(LimitLabelPosition.POS_RIGHT);
+	       // llXAxis.setTextSize(10f);
+
+	        XAxis xAxis = mChart.getXAxis();
+	        xAxis.setDrawGridLines(false);
+	        xAxis.setDrawAxisLine(false);
+	   //     xAxis.addLimitLine(llXAxis);
+	        
+	        LimitLine ll1 = new LimitLine(7.5f, "高位警戒值");
+	        ll1.setLineWidth(4f);
+	        ll1.enableDashedLine(10f, 10f, 0f);
+	        ll1.setLabelPosition(LimitLabelPosition.POS_LEFT);
+	        ll1.setTextSize(10f);
+
+	        LimitLine ll2 = new LimitLine(6.5f, "低位警戒值");
+	        ll2.setLineWidth(4f);
+	        ll2.enableDashedLine(10f, 10f, 0f);
+	        ll2.setLabelPosition(LimitLabelPosition.POS_RIGHT);
+	        ll2.setTextSize(10f);
+
+	        YAxis leftAxis = mChart.getAxisLeft();
+	        leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
+	        leftAxis.addLimitLine(ll1);
+	        leftAxis.addLimitLine(ll2);
+	        leftAxis.setAxisMaxValue(8.0f);
+	        leftAxis.setAxisMinValue(6.0f);
+	        leftAxis.setStartAtZero(false);
+	        //leftAxis.setYOffset(20f);
+	        leftAxis.enableGridDashedLine(10f, 10f, 0f);
+	        
+	        // limit lines are drawn behind data (and not on top)
+	        leftAxis.setDrawLimitLinesBehindData(true);
+
+	        mChart.getAxisRight().setEnabled(false);
+	        
+	        //初值设置
+	        setData(50, 1);
+	        
+	        mChart.animateY(1000, Easing.EasingOption.EaseInOutQuart);
+	        Legend l = mChart.getLegend();
+	        l.setForm(LegendForm.LINE);
+  
 	}
 	
-
+	
   
   
 	@Override
@@ -260,7 +324,7 @@ public class HomepageActivity extends FragmentActivity implements OnClickListene
 	}
 	
 	
-	
+	//用于刷新数据
 	private void freshTradeList(){
 		if(mylist.size()==0)
 		{
@@ -276,6 +340,7 @@ public class HomepageActivity extends FragmentActivity implements OnClickListene
 			mylist=newlist;
 		};
 	}
+	//用于设置数据
 	private void setTradeList(){
 		newlist.clear();
 		for (int i=0;i<10;i++)
@@ -302,6 +367,157 @@ public class HomepageActivity extends FragmentActivity implements OnClickListene
 		setTradeList();
 		freshTradeList();
 		homefragment.freshadapter(newlist);
+	}
+
+
+//图表数据设置
+	private void setData(int count, float range) {
+		DateFormat time = DateFormat.getTimeInstance();//只显示出时分秒
+		
+        ArrayList<String> xVals = new ArrayList<String>();
+        for (int i = 0; i < count; i++) {
+            xVals.add("9:30"+":"+i);
+        }
+
+        ArrayList<Entry> yVals = new ArrayList<Entry>();
+
+        for (int i = 0; i < count; i++) {
+
+            float mult = range ;
+            float val = (float) (Math.random() * mult+ 6.5);//+ (float)
+                                                           // ((mult *
+                                                           // 0.1) / 10);
+            yVals.add(new Entry(val, i));
+        }
+
+        // create a dataset and give it a type
+        LineDataSet set1 = new LineDataSet(yVals, "汇率时序数据");
+        // set1.setFillAlpha(110);
+        // set1.setFillColor(Color.RED);
+
+        // set the line to be drawn like this "- - - - - -"
+ 
+        set1.setAxisDependency(AxisDependency.LEFT);
+        set1.setColor(ColorTemplate.getHoloBlue());
+        set1.setCircleColor(Color.WHITE);
+        set1.setLineWidth(2f);
+        set1.setCircleSize(3f);
+        set1.setFillAlpha(65);
+        set1.setFillColor(ColorTemplate.getHoloBlue());
+        set1.setHighLightColor(Color.rgb(244, 117, 117));
+        set1.setDrawCircleHole(false);
+        set1.setDrawValues(false);
+        set1.setDrawFilled(true);
+        set1.setDrawCircles(false);
+//        set1.setDrawFilled(true);
+        // set1.setShader(new LinearGradient(0, 0, 0, mChart.getHeight(),
+        // Color.BLACK, Color.WHITE, Shader.TileMode.MIRROR));
+
+        ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
+        dataSets.add(set1); // add the datasets
+
+        // create a data object with the datasets
+        LineData data = new LineData(xVals, dataSets);
+
+        // set data
+        mChart.setData(data);
+    }
+//图表接口重写
+	@Override
+	public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onNothingSelected() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onChartLongPressed(MotionEvent me) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onChartDoubleTapped(MotionEvent me) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onChartSingleTapped(MotionEvent me) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onChartFling(MotionEvent me1, MotionEvent me2, float velocityX,
+			float velocityY) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onChartScale(MotionEvent me, float scaleX, float scaleY) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onChartTranslate(MotionEvent me, float dX, float dY) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onStartTrackingTouch(SeekBar arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	@Override
+	public void onStopTrackingTouch(SeekBar arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
