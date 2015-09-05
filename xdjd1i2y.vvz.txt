@@ -1,0 +1,151 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is behind 'origin/master' by 5 commits, and can be fast-forwarded.
+#   (use "git pull" to update your local branch)
+#
+# Changes to be committed:
+#	new file:   .gitignore
+#	modified:   MaterialDesign/bin/materialdesign.jar
+#	modified:   YeS/.classpath
+#	modified:   YeS/AndroidManifest.xml
+#	modified:   YeS/bin/AndroidManifest.xml
+#	deleted:    YeS/bin/MaterialDesignDemo.apk
+#	modified:   YeS/bin/R.txt
+#	deleted:    YeS/bin/YeS.apk
+#	deleted:    YeS/bin/android-support-annotations.jar
+#	deleted:    YeS/bin/classes.dex
+#	modified:   YeS/bin/classes/com/exchange/yes/R$drawable.class
+#	modified:   YeS/bin/classes/com/exchange/yes/R$id.class
+#	modified:   YeS/bin/classes/com/exchange/yes/R$layout.class
+#	modified:   YeS/bin/classes/com/exchange/yes/R$menu.class
+#	modified:   YeS/bin/classes/com/exchange/yes/R$string.class
+#	modified:   YeS/bin/classes/com/exchange/yes/R$style.class
+#	modified:   YeS/bin/classes/com/exchange/yes/R$styleable.class
+#	modified:   YeS/bin/classes/com/exchange/yes/adapter/NormalAdapter.class
+#	deleted:    YeS/bin/classes/com/exchange/yes/app/AskCusromActivity.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/AskEditblRatActivity$1.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/AskEditblRatActivity$2.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/AskEditblRatActivity.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/AskQuickActivity$1$1.class
+#	modified:   YeS/bin/classes/com/exchange/yes/app/AskQuickActivity$1.class
+#	deleted:    YeS/bin/classes/com/exchange/yes/app/AskQuickActivity$2.class
+#	modified:   YeS/bin/classes/com/exchange/yes/app/AskQuickActivity.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/EditblRatTradActivity$1$1.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/EditblRatTradActivity$1.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/EditblRatTradActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/app/Home1Fra.class
+#	modified:   YeS/bin/classes/com/exchange/yes/app/HomepageActivity$2.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/HomepageActivity$3.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/HomepageActivity$4.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/HomepageActivity$5.class
+#	modified:   YeS/bin/classes/com/exchange/yes/app/HomepageActivity.class
+#	deleted:    YeS/bin/classes/com/exchange/yes/app/LoginActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/app/LoginActivity2.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/MallActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/app/MineActivity.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/QuickTradeActivity$1$1.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/QuickTradeActivity$1.class
+#	new file:   YeS/bin/classes/com/exchange/yes/app/QuickTradeActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/net/MobileHttpClient.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/BindingActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/ExchangeActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/Home2Fra.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/HomeActivity.class
+#	deleted:    YeS/bin/classes/com/exchange/yes/pre/HomePage_Activity$1.class
+#	deleted:    YeS/bin/classes/com/exchange/yes/pre/HomePage_Activity$2.class
+#	deleted:    YeS/bin/classes/com/exchange/yes/pre/HomePage_Activity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/MainActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/NichengActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/ProgressActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/QuickTradeActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/RecordActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/SwitchActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/TestActivity.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/WidgetActivity$1$1.class
+#	modified:   YeS/bin/classes/com/exchange/yes/pre/WidgetActivity.class
+#	modified:   YeS/bin/classes/com/gc/materialdesign/R$drawable.class
+#	modified:   YeS/bin/classes/com/gc/materialdesign/R$id.class
+#	modified:   YeS/bin/classes/com/gc/materialdesign/R$layout.class
+#	deleted:    YeS/bin/dexedLibs/ActiveAndroid-56ffe54c0c7fabae8dc6384bca3bcc33.jar
+#	deleted:    YeS/bin/dexedLibs/ActiveAndroid-9993d7e46fe833e7b1867e04a28134b7.jar
+#	deleted:    YeS/bin/dexedLibs/android-async-http-1.4.8-0b82fae302e35869cb4dd56d5e7b5ae4.jar
+#	deleted:    YeS/bin/dexedLibs/android-async-http-1.4.8-ec3ef0914c2149f720cb1afd3bd48a51.jar
+#	deleted:    YeS/bin/dexedLibs/android-support-v4-5e1b34b526a0ea9c17955d894f463459.jar
+#	deleted:    YeS/bin/dexedLibs/android-support-v4-96c3d89c28b46dce96d7c6e05331c930.jar
+#	deleted:    YeS/bin/dexedLibs/android-support-v4-bef3fd3bb7de3af8a92755238aef8c87.jar
+#	deleted:    YeS/bin/dexedLibs/android-support-v4-bf66925c0de0ed39699781cce178bab1.jar
+#	deleted:    YeS/bin/dexedLibs/materialdesign-058cdafff2b08c025b205c2538f224ec.jar
+#	deleted:    YeS/bin/dexedLibs/materialdesign-1ae8b81dbd0061318ba79db6f21b6bb8.jar
+#	deleted:    YeS/bin/dexedLibs/materialdesign-2e44c44ab809ffbebb867996bd45218a.jar
+#	deleted:    YeS/bin/dexedLibs/materialdesign-efc7afd176e09a0e235e81e75c76e543.jar
+#	deleted:    YeS/bin/dexedLibs/mpandroidchartlibrary-2-1-3-dbe92b9e606fa18a19c980799d3bb72a.jar
+#	deleted:    YeS/bin/dexedLibs/nineoldandroids-2.4.0-8faf165a64575886a6a7e3ed0c7a7dbb.jar
+#	deleted:    YeS/bin/dexedLibs/nineoldandroids-2.4.0-97c49f192724b05214d15bc32b0aa5be.jar
+#	deleted:    YeS/bin/dexedLibs/nineoldandroids-2.4.0-a6a98ed65a23df64e11ef2e52463c7da.jar
+#	deleted:    YeS/bin/dexedLibs/nineoldandroids-2.4.0-ab21bfe230cf815c85d482152e870fbe.jar
+#	deleted:    YeS/bin/jarlist.cache
+#	deleted:    YeS/bin/res/crunch/drawable-hdpi/askbg.png
+#	deleted:    YeS/bin/res/crunch/drawable-hdpi/china.png
+#	deleted:    YeS/bin/res/crunch/drawable-hdpi/fab_bg_mini.png
+#	deleted:    YeS/bin/res/crunch/drawable-hdpi/fab_bg_normal.png
+#	deleted:    YeS/bin/res/crunch/drawable-hdpi/ic_launcher.png
+#	deleted:    YeS/bin/res/crunch/drawable-hdpi/login.png
+#	deleted:    YeS/bin/res/crunch/drawable-hdpi/us.png
+#	deleted:    YeS/bin/res/crunch/drawable-mdpi/ic_launcher.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/ic_action_new.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/ic_launcher.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/ic_next.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/icn_button.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/icn_progress.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/icn_select_color.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/icn_switch.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/icn_widget.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/messages_bg.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/tab_bg.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/tab_icon_01.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/tab_icon_02.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/tab_icon_03.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/tab_icon_04.png
+#	deleted:    YeS/bin/res/crunch/drawable-xhdpi/tab_select_bg.png
+#	deleted:    YeS/bin/res/crunch/drawable/btn_food.png
+#	deleted:    YeS/bin/res/crunch/drawable/btn_hotel.png
+#	deleted:    YeS/bin/res/crunch/drawable/btn_shop.png
+#	deleted:    YeS/bin/res/crunch/drawable/btn_taxi.png
+#	deleted:    YeS/bin/resources.ap_
+#	modified:   YeS/gen/com/exchange/yes/R.java
+#	modified:   YeS/gen/com/gc/materialdesign/R.java
+#	new file:   YeS/res/drawable/film.png
+#	new file:   YeS/res/drawable/food.png
+#	new file:   YeS/res/drawable/hotel.png
+#	new file:   YeS/res/drawable/search.png
+#	new file:   YeS/res/drawable/taxi.png
+#	new file:   YeS/res/layout/activity_ask_editbl_rat.xml
+#	modified:   YeS/res/layout/activity_ask_quick.xml
+#	new file:   YeS/res/layout/activity_editbl_rat_trad.xml
+#	new file:   YeS/res/layout/activity_mall.xml
+#	modified:   YeS/res/layout/activity_quick_trade.xml
+#	new file:   YeS/res/menu/ask_editbl_rat.xml
+#	new file:   YeS/res/menu/ask_quick.xml
+#	new file:   YeS/res/menu/editbl_rat_trad.xml
+#	new file:   YeS/res/menu/mall.xml
+#	modified:   YeS/res/values/strings.xml
+#	new file:   YeS/src/com/exchange/yes/app/AskEditblRatActivity.java
+#	modified:   YeS/src/com/exchange/yes/app/AskQuickActivity.java
+#	new file:   YeS/src/com/exchange/yes/app/EditblRatTradActivity.java
+#	modified:   YeS/src/com/exchange/yes/app/HomepageActivity.java
+#	deleted:    YeS/src/com/exchange/yes/app/LoginActivity.java
+#	renamed:    YeS/src/com/exchange/yes/app/AskCusromActivity.java -> YeS/src/com/exchange/yes/app/MallActivity.java
+#	new file:   YeS/src/com/exchange/yes/app/QuickTradeActivity.java
+#	modified:   YeS/src/com/exchange/yes/net/MobileHttpClient.java
+#	deleted:    YeS/src/com/exchange/yes/pre/HomePage_Activity.java
+#
+# Changes not staged for commit:
+#	modified:   MaterialDesign/bin/materialdesign.jar
+#
+# Untracked files:
+#	YeS/bin/jarlist.cache
+#	ekbbyku1.js0.txt
+#
+
