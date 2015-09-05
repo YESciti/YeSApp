@@ -7,7 +7,9 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+		<!-- 往SDCard写入数据权限 -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:name="com.exchange.yes.app.MyApplication"
         android:allowBackup="true"
@@ -125,6 +127,9 @@
             android:name="com.exchange.yes.app.SelfTrade"
             android:label="@string/title_activity_self_trade" >
         </activity>
+        
+        <meta-data android:name="AA_DB_NAME" android:value="Application.db" />
+        <meta-data android:name="AA_DB_VERSION" android:value="1" />
     </application>
 
 </manifest>

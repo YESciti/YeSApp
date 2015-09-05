@@ -4,8 +4,11 @@ package com.exchange.yes.app;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 
 import android.app.Activity;
@@ -60,6 +63,7 @@ import com.exchange.yes.dep.MyMarkerView;
 
 
 import com.exchange.yes.adapter.SpinnerAdapter;
+import com.exchange.yes.db.TimeSerises;
 import com.exchange.yes.db.TradeItem;
 import com.exchange.yes.dep.FloatingActionButton;
 import com.exchange.yes.dep.FloatingActionsMenu;
@@ -358,6 +362,27 @@ OnChartGestureListener, OnChartValueSelectedListener{
 		}
 	}
 
+	//时间序列数据的存取
+	//生成并储存
+	public void testtimeserise()
+	{
+		ArrayList<String> xVals = new ArrayList<String>();
+		List<TimeSerises> list =new ArrayList<TimeSerises>() ;
+		TimeSerises item1=new TimeSerises();
+        for (int i = 0; i < 40; i++) {
+        	TimeSerises item=new TimeSerises();
+            item.a_dateformat="9:30"+":"+i;
+            item.a_time_currency_codenum=1;
+            item.a_time_price=(float) (Math.random() * 0.5+ 6.5);
+          // item.save(); 
+            list.add(item);
+        }
+        
+        item1.setTimeSeries(list);
+        List<TimeSerises> test=item1.getalltimeSerises();
+        Log.i("shujuku",item1.getalltimeSerises().get(2).a_time_currency_codenum+"");
+        Log.i("shujuku",item1.getalltimeSerises().get(2).a_time_price+"");
+	}
 
 
 
@@ -372,11 +397,15 @@ OnChartGestureListener, OnChartValueSelectedListener{
 
 //图表数据设置
 	private void setData(int count, float range) {
+		TimeSerises item=new TimeSerises();
+		testtimeserise();
 		DateFormat time = DateFormat.getTimeInstance();//只显示出时分秒
 		
+		List<TimeSerises> list=new ArrayList<TimeSerises>();
+		list=item.getTimeSerises(1);
         ArrayList<String> xVals = new ArrayList<String>();
         for (int i = 0; i < count; i++) {
-            xVals.add("9:30"+":"+i);
+            xVals.add(list.get(i).a_dateformat);
         }
 
         ArrayList<Entry> yVals = new ArrayList<Entry>();
@@ -384,9 +413,11 @@ OnChartGestureListener, OnChartValueSelectedListener{
         for (int i = 0; i < count; i++) {
 
             float mult = range ;
-            float val = (float) (Math.random() * mult+ 6.5);//+ (float)
+//            float val = (float) (Math.random() * mult+ 6.5);//+ (float)
                                                            // ((mult *
                                                            // 0.1) / 10);
+            
+            float val=(float) list.get(i).a_time_price;
             yVals.add(new Entry(val, i));
         }
 
