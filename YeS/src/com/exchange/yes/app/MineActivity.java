@@ -35,8 +35,9 @@ import android.view.View.OnClickListener;
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			setContentView(R.layout.activity_mine);
 			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			setContentView(R.layout.activity_mine);
+			
 			
 			LayoutRipple rl_geren=(LayoutRipple) findViewById(R.id.rl_geren);
 			LayoutRipple rl_anquan=(LayoutRipple) findViewById(R.id.rl_anquan); 

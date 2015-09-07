@@ -19,8 +19,9 @@ Button deal;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_ask_editbl_rat);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_ask_editbl_rat);
+		
 //		dialog of confirm your deal 
 		findViewById(R.id.btn_submitorder_edit).setOnClickListener(new OnClickListener() {
 			

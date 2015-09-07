@@ -24,8 +24,9 @@ public class Person extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_person);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_person);
+		
 
 		
 		Button btn_edit=(Button)findViewById(R.id.btn_edit);

@@ -26,8 +26,9 @@ public class RePerson extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_re_person);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_re_person);
+		
 		
 		Button btn_edit=(Button)findViewById(R.id.btn_edit);
 		btn_edit.setOnClickListener(new SaveListener());

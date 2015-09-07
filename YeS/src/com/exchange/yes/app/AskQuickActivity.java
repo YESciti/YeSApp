@@ -22,10 +22,11 @@ public class AskQuickActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_ask_quick);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_quick_trade);
+		
 //		
-		findViewById(R.id.btn_finish_quickDeal).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.btn_submitorder_quick).setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(final View flatButton) {

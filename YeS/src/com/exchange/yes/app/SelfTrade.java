@@ -24,8 +24,9 @@ public class SelfTrade extends Activity {
 @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_self_trade);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_self_trade);
+		
 		//获取spinner
 		spinner=(Spinner)findViewById(R.id.spinner);
 		//获取数据

@@ -19,19 +19,28 @@ public class QuickTradeActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_quick_trade);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_quick_trade);
+		
 //		dialog of confirm your deal 
 		findViewById(R.id.btn_submitorder_quick).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(final View flatButton) {
-				Dialog dialog = new Dialog(QuickTradeActivity.this, "Title", "确认交易");
+				Dialog dialog = new Dialog(QuickTradeActivity.this, "提示", "点击确定将直接交易！");
 				dialog.setOnAcceptButtonClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v){
 						Intent adkEditIntent=new Intent(QuickTradeActivity.this,AskQuickActivity.class);
 						startActivity(adkEditIntent);
-						Toast.makeText(QuickTradeActivity.this, "Click accept button", 1).show();
+						Toast.makeText(QuickTradeActivity.this, "直接交易", 1).show();
+					}
+				});
+				dialog.setOnCancelButtonClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						// TODO Auto-generated method stub
+						
 					}
 				});
 				dialog.show();
