@@ -128,6 +128,14 @@
     <string name="xingbie">性别</string>
     <string name="nv_sex">女</string>
     <string name="youxiang">邮箱地址</string>
+     <string name="ecom">电商</string>
+    <string name="travel">旅游</string>
+    <string name="taxi">打车</string>
+    <string name="hotel">住宿</string>
+    <string name="initi">100</string>
+    
+    
+    
     <string name="title_activity_homepage">FAB_Activity</string>
     <string name="title_activity_mall">MallActivity</string>
     <string name="title_activity_editbl_rat_trad">EditblRatTradActivity</string>
@@ -136,5 +144,6 @@
     <string name="title_activity_re_person">RePerson</string>
     <string name="title_activity_secure">Secure</string>
     <string name="title_activity_self_trade">SelfTrade</string>
+    
 
 </resources>

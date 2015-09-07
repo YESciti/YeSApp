@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,9 +9,152 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MallActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        <RelativeLayout
+            android:id="@+id/rela1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edt_mall_username"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/edt_mall_username"
+                android:src="@drawable/search" />
+
+            <EditText
+                android:id="@+id/edt_mall_username"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/search"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_logedit"
+                android:ems="10" >
+
+                <requestFocus />
+          </EditText>
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/rela2"
+      android:layout_width="match_parent"
+      android:layout_height="70dp"
+      android:layout_below="@+id/rela1"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="15dp"
+      android:layout_marginLeft="5dp" >
+
+       <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/item_ecomm"
+            android:layout_width="55dp"
+            android:layout_height="69dp"
+            android:background="#FFF"
+            android:clickable="true" 
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/zuobian"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/food" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/ecom" />
+        </com.gc.materialdesign.views.LayoutRipple>
+
+        <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/item_travel"
+            android:layout_width="55dp"
+            android:layout_height="69dp"
+            android:background="#FFF"
+            android:clickable="true"
+            android:layout_toRightOf="@+id/item_ecomm" 
+            android:layout_marginLeft="17dp"
+           >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/travel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/travel" />
+        </com.gc.materialdesign.views.LayoutRipple>
+
+        <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/item_taxi"
+            android:layout_width="55dp"
+            android:layout_height="69dp"
+            android:background="#FFF"
+            android:clickable="true" 
+            android:layout_toRightOf="@+id/item_travel" 
+            android:layout_marginLeft="17dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/taxi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/taxi" />
+        </com.gc.materialdesign.views.LayoutRipple>
+
+        <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/itemSwitches"
+            android:layout_width="55dp"
+            android:layout_height="69dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF"
+            android:clickable="true" 
+            android:layout_toRightOf="@+id/item_taxi"
+            android:layout_marginLeft="17dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/hotel" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/hotel" />
+
+        </com.gc.materialdesign.views.LayoutRipple>
+
+            </RelativeLayout>
+
+
 
 </RelativeLayout>
+

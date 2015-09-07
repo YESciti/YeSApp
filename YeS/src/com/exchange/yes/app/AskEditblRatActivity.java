@@ -20,7 +20,7 @@ public class AskEditblRatActivity extends Activity {
 		setContentView(R.layout.activity_ask_editbl_rat);
 //		对于剩余未交易成功部分，用户点击更改汇率按钮
 //		REWRITE RATE AND OFFER A NEW ORDER
-		findViewById(R.id.btn_changeRate_askEdit).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.btn_submitorder_edit).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent adkEditIntent=new Intent(AskEditblRatActivity.this,EditblRatTradActivity.class);
@@ -29,7 +29,7 @@ public class AskEditblRatActivity extends Activity {
 		});
 //		对于剩余未交易成功部分，用户不改汇率，挂单等待
 //		THE RATE UNCHAGED AND WAIT
-		findViewById(R.id.btn_wait_askQuick).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.btn_submitorder_edit).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent adkEditIntent=new Intent(AskEditblRatActivity.this,HomepageActivity.class);

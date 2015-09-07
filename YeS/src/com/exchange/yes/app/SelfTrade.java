@@ -22,7 +22,7 @@ public class SelfTrade extends Activity {
 @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_self_trade);
 		//获取spinner
 		spinner=(Spinner)findViewById(R.id.spinner);
 		//获取数据

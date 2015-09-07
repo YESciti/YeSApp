@@ -170,7 +170,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      public void onClick(View view) {
 	    	 Intent quickIntent = new Intent(HomepageActivity.this,MineActivity.class);
 	 		 startActivity(quickIntent);
-	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
+	        Toast.makeText(HomepageActivity.this, "个人中心", Toast.LENGTH_SHORT).show();
 	      }
 	    });
 //市场
@@ -179,7 +179,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      public void onClick(View view) {
 	    	 Intent quickIntent = new Intent(HomepageActivity.this,MallActivity.class);
 	 		 startActivity(quickIntent);
-	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
+	        Toast.makeText(HomepageActivity.this, "市场", Toast.LENGTH_SHORT).show();
 	      }
 	    });
 //快速交易
@@ -188,7 +188,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      public void onClick(View view) {
 	    	 Intent quickIntent = new Intent(HomepageActivity.this,QuickTradeActivity.class);
 	 		 startActivity(quickIntent);
-	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
+	        Toast.makeText(HomepageActivity.this, "快速交易", Toast.LENGTH_SHORT).show();
 	      }
 	    });
 //自定义交易	  
@@ -197,7 +197,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      public void onClick(View view) {
 	    	 Intent quickIntent = new Intent(HomepageActivity.this,EditblRatTradActivity.class);
 	 		 startActivity(quickIntent);
-	        Toast.makeText(HomepageActivity.this, "right", Toast.LENGTH_SHORT).show();
+	        Toast.makeText(HomepageActivity.this, "自定义交易", Toast.LENGTH_SHORT).show();
 	      }
 	    });
 	    
