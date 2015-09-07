@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class AskQuickActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ask_quick);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //		
 		findViewById(R.id.btn_finish_quickDeal).setOnClickListener(new OnClickListener() {
 			

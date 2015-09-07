@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 
 
@@ -21,6 +22,7 @@ public class Secure extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_secure);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		btn_save_secure=(ButtonRectangle)findViewById(R.id.btn_save_secure);
 		btn_save_secure.setOnClickListener(new sureListener());

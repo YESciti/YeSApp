@@ -3,6 +3,8 @@ package com.exchange.yes.app;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.Window;
+
 import java.util.List;
 import java.util.Map;
 import android.view.View;
@@ -23,6 +25,7 @@ public class SelfTrade extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_self_trade);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//获取spinner
 		spinner=(Spinner)findViewById(R.id.spinner);
 		//获取数据

@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class QuickTradeActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quick_trade);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //		dialog of confirm your deal 
 		findViewById(R.id.btn_submitorder_quick).setOnClickListener(new OnClickListener() {
 			@Override

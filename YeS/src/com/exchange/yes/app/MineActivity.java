@@ -8,6 +8,7 @@ import com.exchange.yes.R.menu;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.Window;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -35,6 +36,7 @@ import android.view.View.OnClickListener;
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_mine);
+			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			
 			LayoutRipple rl_geren=(LayoutRipple) findViewById(R.id.rl_geren);
 			LayoutRipple rl_anquan=(LayoutRipple) findViewById(R.id.rl_anquan); 

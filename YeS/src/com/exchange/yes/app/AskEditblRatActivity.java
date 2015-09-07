@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class AskEditblRatActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ask_editbl_rat);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //		对于剩余未交易成功部分，用户点击更改汇率按钮
 //		REWRITE RATE AND OFFER A NEW ORDER
 		findViewById(R.id.btn_submitorder_edit).setOnClickListener(new OnClickListener() {

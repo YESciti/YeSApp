@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.view.Menu;
@@ -24,6 +25,7 @@ public class Person extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_person);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		
 		Button btn_edit=(Button)findViewById(R.id.btn_edit);

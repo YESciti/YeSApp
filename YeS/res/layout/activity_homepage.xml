@@ -200,7 +200,7 @@
             fab:fab_icon="@drawable/icn_button"
             fab:fab_title="自定义交易"
             fab:fab_colorPressed="@color/white_pressed"
-            android:visibility="gone" />"
+            android:visibility="gone" />
 
     </com.exchange.yes.dep.FloatingActionsMenu>
     </RelativeLayout>
