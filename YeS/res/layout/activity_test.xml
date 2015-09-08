@@ -15,11 +15,93 @@
         android:text="@string/hello_world" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/shape_order" >
-    </RelativeLayout>
+        android:id="@+id/spinnerlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="110sp"
+        android:layout_below="@+id/introduce" >
+
+     <View
+         android:layout_width="fill_parent"
+         android:layout_height="1dp"
+         android:layout_alignBottom="@+id/textView1"
+         android:layout_alignParentLeft="true"
+         android:background="#1E88E5" />
+
+     <TextView
+         android:id="@+id/textView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_centerVertical="true"
+         android:layout_centerHorizontal="true"
+         android:text="请选择要查看的币种"
+         android:textSize="16sp" />
+     
+     <View
+         	android:id="@+id/view11"
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/cur_spinner"
+            android:background="#88CECECE" />
+ <RelativeLayout
+    android:layout_width="match_parent"
+     android:layout_below="@+id/view11"
+    android:id="@+id/TradeListItem"
+     android:layout_height="23sp"  >
+
+
+<TextView
+    android:id="@+id/listview_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:text="方向"
+    android:textColor="#000000"
+    android:textSize="20sp" />
+<TextView
+    android:id="@+id/listview_3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginRight="24dp"
+    android:text="汇率"
+    android:textColor="#000000"
+    android:textSize="20sp" />
+
+<TextView
+    android:id="@+id/listview_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="26dp"
+    android:textColor="#000000"
+    android:text="数量"
+    android:textSize="20sp" />
+
+</RelativeLayout>
+
+ <Spinner
+     android:id="@+id/cur_spinner"
+     android:layout_width="200sp"
+     android:layout_height="50dp"
+     android:layout_alignParentLeft="true"
+     android:layout_centerVertical="true" />
+
+ <com.gc.materialdesign.views.ButtonRectangle
+     android:id="@+id/btn_fresh"
+     android:layout_width="100sp"
+     android:layout_height="50dp"
+     android:layout_alignParentRight="true"
+     android:layout_alignTop="@+id/cur_spinner"
+     android:background="#fffffe"
+     android:text="刷新"
+     android:textColor="#000000" >
+ </com.gc.materialdesign.views.ButtonRectangle>
+
+ </RelativeLayout>
 
 </RelativeLayout>

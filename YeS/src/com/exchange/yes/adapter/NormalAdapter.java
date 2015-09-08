@@ -104,7 +104,7 @@ public class NormalAdapter  extends BaseAdapter{
 			convertView.setTag(viewHolder);
 			
 			if(pos==4||pos==5){
-				viewHolder.layout.setBackgroundColor(Color.parseColor("#1E88E5"));
+				viewHolder.layout.setBackgroundColor(Color.parseColor("#03A9F4"));
 			}
 			
 		} else {

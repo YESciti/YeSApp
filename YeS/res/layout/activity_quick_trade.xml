@@ -53,13 +53,10 @@
     
     <RelativeLayout
         android:id="@+id/relabar"
-         android:layout_below="@+id/view1"
+        android:layout_below="@+id/view1"
         android:layout_width="fill_parent"
         android:layout_height="120dp"
-        android:background="#01579b"
-        >
-
-        
+        android:background="#01579b">        
     </RelativeLayout>
    
     <!--
@@ -186,7 +183,7 @@
             android:layout_width="match_parent"
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
-            android:background="#FF4900" >
+            android:background="#1E88E5" >
 
             <TextView
                 android:id="@+id/txt_zidingyi"
@@ -197,7 +194,7 @@
                 android:layout_marginLeft="14dp"
                 android:layout_toRightOf="@+id/imageView1"
                 android:gravity="center_vertical"
-                android:text="。。。"
+                android:text="金额"
                 android:textSize="20sp" />
 
             <ImageView
@@ -215,7 +212,7 @@
             android:layout_height="100dp"
             android:layout_alignParentBottom="true"
             android:layout_below="@id/lay3.1"
-            android:background="#E0E0E0" >
+            android:background="#ffffff" >
 
             <EditText
                 android:id="@+id/editText_amount"
@@ -288,7 +285,7 @@
         android:id="@+id/lay4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFBF00" >
+        android:background="#88CECECE" >
 
         <Button
             android:id="@+id/btn_submitorder_quick"
@@ -296,6 +293,7 @@
             android:layout_height="35dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:background="#ffffff"
             android:text="@string/qianqujiaoyi" />
     </RelativeLayout>
 
