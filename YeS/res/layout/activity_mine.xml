@@ -1,41 +1,40 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+
     android:id="@+id/relativelayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
+    android:background="#FAFAFA">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/faceimage"
-        android:layout_marginTop="30dp" >
+    <RelativeLayout android:id="@+id/titles" android:layout_width="fill_parent" android:layout_height="58dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
 
-       <TextView
-        android:id="@+id/layout1.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="52dp"
-        android:text="@string/meiyuan"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="20sp" />
+     <RelativeLayout android:layout_width="fill_parent" android:layout_height="56dp" android:layout_alignParentRight="true" android:layout_alignParentTop="true" android:background="#1E88E5">
 
-    </RelativeLayout>
+         <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:text="自定义交易" android:textColor="#FFF" android:textSize="25dp" android:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/faceimage"
-        android:layout_width="100dip"
-        android:layout_height="100dip"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/icn_button" />
+       <com.gc.materialdesign.views.LayoutRipple
+           android:id="@+id/itemSwitches"
+           android:layout_width="64sp"
+           android:layout_height="fill_parent"
+           android:background="#1E88E5"
+           android:clickable="true" >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icn_switch" />
+
+    	</com.gc.materialdesign.views.LayoutRipple>
+        
+
+         <View android:id="@+id/view1" android:layout_width="fill_parent" android:layout_height="2dp" android:layout_alignParentBottom="true" android:background="#88CECECE" />
+     </RelativeLayout>
+     
+ </RelativeLayout>
 
     <TextView
         android:id="@+id/textView4"
@@ -69,97 +68,11 @@
         android:text="@string/shi"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="40sp" />
-    
-  <com.gc.materialdesign.views.LayoutRipple
-        android:clickable="true" 
-        android:id="@+id/rl_zhifu"
-        android:background="#FFF"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/rl_geren"
-        android:layout_marginTop="35dp" >
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:text="@string/zhifu"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/img_gerenzhongxin"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/d" />
- </com.gc.materialdesign.views.LayoutRipple>
-
-    <com.gc.materialdesign.views.LayoutRipple
-        android:background="#FFF"
-        android:clickable="true" 
-        android:id="@+id/rl_youhuiquan"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_alignTop="@+id/rl_zhifu"
-        android:layout_toRightOf="@+id/textView3" >
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:text="@string/youhui"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/img_gerenzhongxin"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/e" />
-   
-    </com.gc.materialdesign.views.LayoutRipple>
-
-    <com.gc.materialdesign.views.LayoutRipple
-        android:background="#FFF"
-        android:clickable="true" 
-        android:id="@+id/rl_anquan"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_above="@+id/rl_zhifu"
-        android:layout_toRightOf="@+id/textView3" >
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:text="@string/anquanzhongixn"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:id="@+id/a"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/b"  />
-</com.gc.materialdesign.views.LayoutRipple>
 
  <com.gc.materialdesign.views.LayoutRipple
      android:id="@+id/rl_geren"
-     android:layout_width="100dp"
-     android:layout_height="60dp"
+     android:layout_width="124sp"
+     android:layout_height="70dp"
      android:layout_alignRight="@+id/textView3"
      android:layout_below="@+id/textView3"
      android:layout_marginTop="32dp"
@@ -185,12 +98,40 @@
          android:src="@drawable/a" />
  </com.gc.materialdesign.views.LayoutRipple>
 
+ <ImageView
+     android:id="@+id/faceimage"
+     android:layout_width="100dip"
+     android:layout_height="100dip"
+     android:layout_below="@+id/titles"
+     android:layout_centerHorizontal="true"
+     android:src="@drawable/icn_button" />
+
+ <RelativeLayout
+     android:id="@+id/relativeLayout1"
+     android:layout_width="200dp"
+     android:layout_height="wrap_content"
+     android:layout_alignLeft="@+id/rl_geren"
+     android:layout_below="@+id/faceimage"
+     android:layout_marginTop="23dp" >
+
+     <TextView
+         android:id="@+id/layout1.1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginLeft="52dp"
+         android:text="@string/meiyuan"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:textSize="20sp" />
+ </RelativeLayout>
+
  <com.gc.materialdesign.views.LayoutRipple
      android:id="@+id/rl_jiaoyi"
-     android:layout_width="100dp"
-     android:layout_height="60dp"
-     android:layout_above="@+id/rl_zhifu"
-     android:layout_toRightOf="@+id/relativeLayout1"
+     android:layout_width="124sp"
+     android:layout_height="70dp"
+     android:layout_alignParentRight="true"
+     android:layout_alignTop="@+id/rl_anquan"
      android:background="#FFF"
      android:clickable="true" >
 
@@ -214,11 +155,40 @@
  </com.gc.materialdesign.views.LayoutRipple>
 
  <com.gc.materialdesign.views.LayoutRipple
+     android:id="@+id/rl_anquan"
+     android:layout_width="124sp"
+     android:layout_height="70dp"
+     android:layout_alignLeft="@+id/faceimage"
+     android:layout_alignTop="@+id/rl_geren"
+     android:background="#FFF"
+     android:clickable="true" >
+
+     <TextView
+         android:id="@+id/textView5"
+         android:layout_width="80dp"
+         android:layout_height="40dp"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="30dp"
+         android:text="@string/anquanzhongixn"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:textSize="18sp" />
+
+     <ImageView
+         android:id="@+id/a"
+         android:layout_width="30dp"
+         android:layout_height="30dp"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:src="@drawable/b" />
+ </com.gc.materialdesign.views.LayoutRipple>
+
+ <com.gc.materialdesign.views.LayoutRipple
      android:id="@+id/rl_exit"
-     android:layout_width="100dp"
-     android:layout_height="60dp"
-     android:layout_alignLeft="@+id/rl_jiaoyi"
+     android:layout_width="124sp"
+     android:layout_height="70dp"
+     android:layout_alignParentRight="true"
      android:layout_alignTop="@+id/rl_youhuiquan"
+ 
      android:background="#FFF"
      android:clickable="true" >
 
@@ -239,6 +209,63 @@
          android:layout_alignParentTop="true"
          android:layout_centerHorizontal="true"
          android:src="@drawable/f" />
+ </com.gc.materialdesign.views.LayoutRipple>
+
+ <com.gc.materialdesign.views.LayoutRipple
+     android:id="@+id/rl_youhuiquan"
+     android:layout_width="124sp"
+     android:layout_height="70dp"
+     android:layout_below="@+id/rl_geren"
+     android:layout_toRightOf="@+id/rl_geren"
+     android:background="#FFF"
+     android:clickable="true" >
+
+     <TextView
+         android:id="@+id/textView5"
+         android:layout_width="80dp"
+         android:layout_height="40dp"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="30dp"
+         android:text="@string/youhui"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:textSize="18sp" />
+
+     <ImageView
+         android:id="@+id/img_gerenzhongxin"
+         android:layout_width="30dp"
+         android:layout_height="30dp"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:src="@drawable/e" />
+ </com.gc.materialdesign.views.LayoutRipple>
+
+ <com.gc.materialdesign.views.LayoutRipple
+     android:id="@+id/rl_zhifu"
+     android:layout_width="124sp"
+     android:layout_height="70dp"
+     android:layout_alignParentLeft="true"
+     android:layout_alignTop="@+id/rl_youhuiquan"
+     android:layout_marginLeft="12dp"
+     android:background="#FFF"
+     android:clickable="true" >
+
+     <TextView
+         android:id="@+id/textView5"
+         android:layout_width="80dp"
+         android:layout_height="40dp"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="30dp"
+         android:text="@string/zhifu"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:textSize="18sp" />
+
+     <ImageView
+         android:id="@+id/img_gerenzhongxin"
+         android:layout_width="30dp"
+         android:layout_height="30dp"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:src="@drawable/d" />
  </com.gc.materialdesign.views.LayoutRipple>
     
 </RelativeLayout>

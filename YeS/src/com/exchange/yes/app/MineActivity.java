@@ -1,34 +1,16 @@
 package com.exchange.yes.app;
 
-	import com.exchange.yes.R;
-import com.exchange.yes.R.layout;
-import com.exchange.yes.R.menu;
-
-	import android.os.Bundle;
-import android.app.Activity;
+	import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.Window;
-import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.List;
-import java.util.Map;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.SimpleAdapter;
-import android.widget.Spinner;
-import com.gc.materialdesign.views.LayoutRipple;
-import android.database.SQLException; 
-import android.app.Activity;
-import android.content.Intent;
-import android.view.*;
 import android.view.View.OnClickListener;
+import android.view.Window;
+
+import com.exchange.yes.R;
+import com.gc.materialdesign.views.LayoutRipple;
 
 	public class MineActivity extends Activity  implements OnClickListener{
 

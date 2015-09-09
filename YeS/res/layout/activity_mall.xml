@@ -60,7 +60,7 @@
 
         <com.gc.materialdesign.views.LayoutRipple
             android:id="@+id/item_ecomm"
-            android:layout_width="80dp"
+            android:layout_width="95sp"
             android:layout_height="69dp"
             android:layout_alignParentBottom="true"
             android:background="#FFF"
@@ -84,8 +84,9 @@
 
         <com.gc.materialdesign.views.LayoutRipple
             android:id="@+id/item_travel"
-            android:layout_width="80dp"
+            android:layout_width="95sp"
             android:layout_height="69dp"
+            android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/item_ecomm"
             android:background="#FFF"
             android:clickable="true" >
@@ -108,8 +109,9 @@
 
         <com.gc.materialdesign.views.LayoutRipple
             android:id="@+id/item_taxi"
-            android:layout_width="80dp"
+            android:layout_width="95sp"
             android:layout_height="69dp"
+            android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/item_travel"
             android:background="#FFF"
             android:clickable="true" >
@@ -132,8 +134,9 @@
 
         <com.gc.materialdesign.views.LayoutRipple
             android:id="@+id/itemSwitches"
-            android:layout_width="80dp"
+            android:layout_width="95sp"
             android:layout_height="69dp"
+            
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/item_taxi"
             android:background="#FFF"
@@ -154,6 +157,7 @@
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/hotel" />
         </com.gc.materialdesign.views.LayoutRipple>
+
     </RelativeLayout>
 
     <Button

@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="Home"
+                android:text="外币交易市场"
                 android:textColor="#FFF"
                 android:textSize="25dp"
                 android:visibility="visible" />
@@ -41,8 +41,9 @@
 	<View
             android:id="@+id/view1"
             android:layout_width="fill_parent"
-            android:layout_height="5dp"
+            android:layout_height="2dp"
             android:layout_alignParentLeft="true"
+             android:layout_alignParentBottom="true"
             android:background="#88CECECE" />
     </RelativeLayout>
 <com.gc.materialdesign.views.LayoutRipple
@@ -70,7 +71,7 @@
         
          <View
             android:layout_width="fill_parent"
-            android:layout_height="10dp"
+            android:layout_height="10sp"
             android:background="#88CECECE"
             android:layout_alignParentBottom="true" />
       
@@ -79,6 +80,7 @@
             android:layout_width="fill_parent"
             android:layout_height="2dp"
             android:layout_below="@+id/introduce"
+            
             android:background="#88CECECE" />
 	
  <RelativeLayout
@@ -108,14 +110,15 @@
      <View
          	android:id="@+id/view11"
             android:layout_width="fill_parent"
-            android:layout_height="10dp"
+            android:layout_height="1dp"
             android:layout_below="@+id/cur_spinner"
             android:background="#88CECECE" />
  <RelativeLayout
     android:layout_width="match_parent"
      android:layout_below="@+id/view11"
     android:id="@+id/TradeListItem"
-     android:layout_height="23sp"  >
+     android:layout_height="1dp" 
+     android:background="#88CECECE" >
 
 
 <TextView
@@ -124,9 +127,9 @@
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    android:text="方向"
+    android:text=""
     android:textColor="#000000"
-    android:textSize="20sp" />
+    android:textSize="1dp" />
 <TextView
     android:id="@+id/listview_3"
     android:layout_width="wrap_content"
@@ -134,9 +137,9 @@
     android:layout_alignParentRight="true"
     android:layout_alignParentTop="true"
     android:layout_marginRight="24dp"
-    android:text="汇率"
+    android:text=""
     android:textColor="#000000"
-    android:textSize="20sp" />
+    android:textSize="1dp" />
 
 <TextView
     android:id="@+id/listview_1"
@@ -146,16 +149,17 @@
     android:layout_alignParentTop="true"
     android:layout_marginLeft="26dp"
     android:textColor="#000000"
-    android:text="数量"
-    android:textSize="20sp" />
+    android:text=""
+    android:textSize="1dp" />
 
 </RelativeLayout>
 
  <Spinner
      android:id="@+id/cur_spinner"
-     android:layout_width="200sp"
+     android:layout_width="150sp"
      android:layout_height="50dp"
-     android:layout_alignParentLeft="true"
+     android:layout_marginLeft="20sp"
+     
      android:layout_centerVertical="true" />
 
  <com.gc.materialdesign.views.ButtonRectangle
@@ -175,14 +179,9 @@
  
   	
     
-	<FrameLayout
-        android:layout_width="match_parent"
-       android:layout_below="@+id/spinnerlayout"
-        android:layout_height="300sp"
-        android:id="@android:id/tabcontent" 
-        >
 
-    </FrameLayout>
+
+ 
     
 	<View
             android:layout_width="fill_parent"
@@ -193,7 +192,7 @@
         android:id="@+id/listvi"
         android:layout_width="fill_parent"
         android:layout_height="40dp"
-        android:layout_below="@android:id/tabcontent"
+        android:layout_below="@+id/spinnerlayout"
         android:background="#ffffff"
         android:clickable="true" >
     	<View
@@ -208,8 +207,7 @@
             android:text=" 外币价格走势 " /> 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="3dp"
-            
+            android:layout_height="10sp"           
             android:background="#88CECECE" />	
     </com.gc.materialdesign.views.LayoutRipple> 
     <com.github.mikephil.charting.charts.LineChart
@@ -219,10 +217,61 @@
         android:layout_height="300sp"
         
        />
+    
+    <View
+         	android:id="@+id/view11"
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/chart1"
+            android:background="#88CECECE" />
+ <RelativeLayout
+    android:layout_width="match_parent"
+     android:layout_below="@+id/view11"
+    android:id="@+id/TradeListItem2"
+     android:layout_height="23sp"  >
 
 
+<TextView
+    android:id="@+id/listview_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:text="数量"
+    android:textColor="#000000"
+    android:textSize="16sp" />
+<TextView
+    android:id="@+id/listview_3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginRight="24dp"
+    android:text="汇率"
+    android:textColor="#000000"
+    android:textSize="16sp" />
 
+<TextView
+    android:id="@+id/listview_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="26dp"
+    android:textColor="#000000"
+    android:text="买卖"
+    android:textSize="16sp" />
 
+</RelativeLayout>
+    
+    
+<FrameLayout
+        android:layout_width="match_parent"
+       android:layout_below="@+id/TradeListItem2"
+        android:layout_height="300sp"
+        android:id="@android:id/tabcontent" 
+        >
+</FrameLayout>
   </RelativeLayout> 
 
 

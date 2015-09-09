@@ -1,84 +1,138 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/relativelayout2"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FAFAFA"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin" >
-    
- <com.gc.materialdesign.views.LayoutRipple
-       android:id="@+id/layout_name"
-       android:layout_width="match_parent"
-       android:layout_height="40dp"
-       android:layout_alignLeft="@+id/layout_touxiang"
-       android:layout_below="@+id/layout_touxiang"
-       android:layout_marginTop="15dip" 
-       android:background="#F4F4F4"
-       android:clickable="true">
-       
-      <TextView
-          android:id="@+id/asd"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:text="@string/yonghuming"
-          android:textSize="18sp" />
-      
-  
+    android:orientation="vertical"
+   >
 
-      <TextView
-          android:id="@+id/txt_mine_name"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentRight="true"
-          android:layout_alignParentBottom="true"
-          android:textSize="16sp" 
-          android:textColor="#636363" />
+    <RelativeLayout
+        android:id="@+id/titles"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:background="#1E88E5" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="个人中心"
+            android:textColor="#FFF"
+            android:textSize="25dp"
+            android:visibility="visible" />
+
+        <com.gc.materialdesign.views.ButtonIcon
+            android:id="@+id/buttonIcon"
+            android:layout_width="60sp"
+            android:layout_height="56sp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#ffffff"
+            android:clickable="true"
+            materialdesign:iconDrawable="@drawable/ic_next" >
+        </com.gc.materialdesign.views.ButtonIcon>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="#88CECECE" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#88CECECE" />
+
+    <com.gc.materialdesign.views.LayoutRipple
+        android:id="@+id/layout_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dip"
+        android:background="#F4F4F4"
+        android:clickable="true" >
+
+        <TextView
+            android:id="@+id/txt_mine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#636363"
+            android:textSize="16sp" />
     </com.gc.materialdesign.views.LayoutRipple>
-    
-<com.gc.materialdesign.views.LayoutRipple   
-       android:id="@+id/layout_touxiang"
-       android:layout_width="match_parent"
-       android:layout_height="90dip"
-       android:layout_alignParentLeft="true"
-       android:layout_alignParentRight="true"
-       android:layout_alignParentTop="true"
-       android:background="#F4F4F4"
-       android:clickable="true" >
 
-      <ImageView
-          android:id="@+id/faceimage"
-          android:layout_width="100dip"
-          android:layout_height="100dip"
-          android:layout_alignParentTop="true"
-          android:layout_centerHorizontal="true"
-          android:src="@drawable/icn_button" />
+    <com.gc.materialdesign.views.LayoutRipple
+        android:id="@+id/layout_touxiang"
+        android:layout_width="match_parent"
+        android:layout_height="90dip"
+        android:background="#F4F4F4"
+        android:clickable="true" >
+
+        <ImageView
+            android:id="@+id/faceimage"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icn_button" />
+
+        <TextView
+            android:id="@+id/asd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:text="@string/yonghuming"
+            android:textSize="18sp" />
 
     </com.gc.materialdesign.views.LayoutRipple>
 
-      
-<com.gc.materialdesign.views.LayoutRipple
-       android:id="@+id/layout_youxiang"
-       android:layout_width="match_parent"
-       android:layout_height="40dip"
-       android:layout_alignLeft="@+id/layout_touxiang"
-       android:background="#F4F4F4"
-       android:layout_marginTop="20dp"
-       android:layout_below="@+id/layout_sex"
-       android:clickable="true" >
- 
-      <TextView
-          android:id="@+id/txt_place"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:text="@string/youxiang"
-          android:textSize="18sp" />
+    <com.gc.materialdesign.views.LayoutRipple
+        android:id="@+id/layout_nicheng"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dp"
+        android:background="#F4F4F4"
+        android:clickable="true" >
+
+        <TextView
+            android:id="@+id/txt_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:text="@string/nicheng"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_mine_nicheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txt_place"
+            android:layout_alignBottom="@+id/txt_place"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
+            android:text="@string/weishezhi"
+            android:textColor="#636363"
+            android:textSize="16sp" />
+
+    </com.gc.materialdesign.views.LayoutRipple>
+
+    <com.gc.materialdesign.views.LayoutRipple
+        android:id="@+id/layout_youxiang"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        
+        android:background="#F4F4F4"
+        android:clickable="true" >
 
         <TextView
             android:id="@+id/txt_mine_youxiang"
@@ -86,27 +140,36 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:textSize="16sp"
-            android:textColor="#636363" />
-          </com.gc.materialdesign.views.LayoutRipple>
-
-  <com.gc.materialdesign.views.LayoutRipple
-       android:id="@+id/layout_sex"
-       android:layout_width="match_parent"
-       android:layout_height="36dp"
-       android:layout_alignLeft="@+id/layout_touxiang"
-       android:background="#F4F4F4"
-       android:layout_marginTop="2dip"
-       android:layout_below="@+id/layout_place"
-       android:clickable="true" 
-       >
+            android:textColor="#636363"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/txt_place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
+            android:text="@string/youxiang"
+            android:textSize="18sp" />
+
+    </com.gc.materialdesign.views.LayoutRipple>
+
+    <com.gc.materialdesign.views.LayoutRipple
+        android:id="@+id/layout_sex"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dip"
+        android:background="#F4F4F4"
+        android:clickable="true" >
+
+        <TextView
+            android:id="@+id/txt_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
             android:text="@string/xingbie"
             android:textSize="18sp" />
 
@@ -114,104 +177,71 @@
             android:id="@+id/txt_mine_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_alignBaseline="@+id/txt_place"
+            android:layout_alignBottom="@+id/txt_place"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
             android:text="@string/nv"
             android:textColor="#636363"
             android:textSize="16sp" />
 
     </com.gc.materialdesign.views.LayoutRipple>
-    
+
     <com.gc.materialdesign.views.LayoutRipple
-       android:clickable="true"
-       android:id="@+id/layout_place"
-       android:layout_width="match_parent"
-       android:layout_height="36dp"
-       android:layout_alignLeft="@+id/layout_touxiang"
-       android:background="#F4F4F4"
-       android:layout_marginTop="2dip"
-       android:layout_below="@+id/layout_nicheng">
+        android:id="@+id/layout_place"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dip"
+        android:background="#F4F4F4"
+        android:clickable="true" >
 
         <TextView
             android:id="@+id/txt_place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="14dp"
             android:text="@string/place"
             android:textSize="18sp" />
+
     </com.gc.materialdesign.views.LayoutRipple>
-     
-     
-      
-      <com.gc.materialdesign.views.LayoutRipple
-         android:clickable="true"
-         android:id="@+id/layout_shouji"
-         android:layout_width="match_parent"
-         android:layout_height="35dip"
-         android:layout_alignParentLeft="true"
-         android:layout_below="@+id/layout_youxiang"
-         android:background="#F4F4F4"
-         android:layout_marginTop="2dip" >
 
-         <TextView
-             android:id="@+id/txt_place"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_alignParentBottom="true"
-             android:layout_alignParentLeft="true"
-             android:text="绑定"
-             android:textSize="18sp" 
-           />
+    <com.gc.materialdesign.views.LayoutRipple
+        android:id="@+id/layout_shouji"
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:layout_marginTop="2dip"
+        android:background="#F4F4F4"
+        android:clickable="true" >
 
-         <TextView
-             android:id="@+id/txt_mine_shouji"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_alignParentBottom="true"
-             android:layout_alignParentRight="true"
-             android:text="@string/weishezhi"
-             android:textSize="16sp" 
-             android:textColor="#636363"/>
-      </com.gc.materialdesign.views.LayoutRipple>
+        <TextView
+            android:id="@+id/txt_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:text="绑定"
+            android:textSize="18sp" />
 
-      <Button
-          android:id="@+id/btn_edit"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_alignLeft="@+id/layout_shouji"
-          android:layout_alignParentBottom="true"
-          android:text="@string/bianji" />
+        <TextView
+            android:id="@+id/txt_mine_shouji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/txt_place"
+            android:layout_marginRight="14dp"
+            android:text="@string/weishezhi"
+            android:textColor="#636363"
+            android:textSize="16sp" />
 
-      <com.gc.materialdesign.views.LayoutRipple
-          android:id="@+id/layout_nicheng"
-          android:layout_width="match_parent"
-          android:layout_height="36dp"
-          android:layout_marginTop="2dp"
-          android:layout_alignLeft="@+id/layout_name"
-          android:layout_below="@+id/layout_name"
-          android:background="#F4F4F4"
-          android:clickable="true" >
+    </com.gc.materialdesign.views.LayoutRipple>
 
-          <TextView
-              android:id="@+id/txt_place"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentLeft="true"
-              android:text="@string/nicheng"
-              android:textSize="18sp" />
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bianji" />
 
-          <TextView
-              android:id="@+id/txt_mine_nicheng"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentRight="true"
-              android:text="@string/weishezhi"
-              android:textColor="#636363"
-              android:textSize="16sp" />
-      </com.gc.materialdesign.views.LayoutRipple>
-
-</RelativeLayout>
-
+</LinearLayout>

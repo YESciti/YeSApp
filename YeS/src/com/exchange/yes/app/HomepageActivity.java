@@ -55,6 +55,7 @@ import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.XAxis.XAxisPosition;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.components.Legend.LegendForm;
 import com.github.mikephil.charting.components.LimitLine.*;
@@ -116,7 +117,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 		Log.i("homepage","right1;");
 		
 		
-		setContentView(R.layout.activity_homepage);
+		setContentView(R.layout.activity_test);
 		initFirstFragment();
 		
 		Log.i("homepage","right2;");
@@ -244,6 +245,8 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	        XAxis xAxis = mChart.getXAxis();
 	        xAxis.setDrawGridLines(false);
 	        xAxis.setDrawAxisLine(false);
+	        xAxis.setPosition(XAxisPosition.BOTTOM); 
+	        xAxis.setTextSize(BIND_AUTO_CREATE);
 	   //     xAxis.addLimitLine(llXAxis);
 	        
 	        LimitLine ll1 = new LimitLine(7.5f, "高位警戒值");
