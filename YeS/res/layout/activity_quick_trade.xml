@@ -30,16 +30,17 @@
                 android:textSize="25dp"
                 android:visibility="visible" />
 
-            <com.gc.materialdesign.views.ButtonIcon
-                android:id="@+id/bu_back_jiaoyi "
-                android:layout_width="60sp"
-                android:layout_height="56sp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:background="#ffffff"
-                android:clickable="true"
-                materialdesign:iconDrawable="@drawable/ic_next" >
-            </com.gc.materialdesign.views.ButtonIcon>
+ <com.gc.materialdesign.views.ButtonIcon
+            android:id="@+id/button_backjiaoyi"
+            android:layout_width="60sp"
+            android:layout_height="56sp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="#ffffff"
+            android:clickable="true"
+            materialdesign:iconDrawable="@drawable/ic_action_arrow_left" >
+        </com.gc.materialdesign.views.ButtonIcon>
+            
         </RelativeLayout>
 
         
