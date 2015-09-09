@@ -73,6 +73,10 @@ public class LoginActivity2 extends Activity implements OnClickListener {
 		              @Override
 		              public void onClick(DialogInterface arg0, int arg1) {
 		                  // TODO Auto-generated method stub
+		            	  
+		            	  
+		            	  
+		            	  
 		            	  Toast.makeText(LoginActivity2.this, "×¢²á³É¹¦", 1).show();
 		              }
 		              
