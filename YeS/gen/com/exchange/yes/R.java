@@ -16,6 +16,8 @@ public final class R {
         public static final int progress_indeterminate_animation=0x7f040004;
         public static final int snackbar_hide_animation=0x7f040005;
         public static final int snackbar_show_animation=0x7f040006;
+        public static final int zoomin=0x7f040007;
+        public static final int zoomout=0x7f040008;
     }
     public static final class array {
         public static final int spinnername=0x7f090000;

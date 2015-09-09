@@ -74,6 +74,8 @@ public class LoginActivity2 extends Activity implements OnClickListener {
 				} else if (msg.what == 2) {
 					
 					Toast.makeText(context, "登录超时", Toast.LENGTH_SHORT).show();
+					//debug 调试使用
+					activityRedirect();
 				} else if (msg.what == 3) {
 					
 					Toast.makeText(context, "请输入用户名", Toast.LENGTH_SHORT).show();
@@ -309,7 +311,17 @@ public class LoginActivity2 extends Activity implements OnClickListener {
 		});
 
 	}
+	//页面跳转 重定向
+	private void  activityRedirect()
+	{
+		Intent HomeIntent = new Intent(LoginActivity2.this,HomepageActivity.class);
+		startActivity(HomeIntent);
 		
+
+		overridePendingTransition(R.anim.zoomin,
+				R.anim.zoomout);
+		LoginActivity2.this.finish();
+	}
 	
 
 }
