@@ -14,10 +14,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.exchange.yes.R;
+import com.exchange.yes.app.HomepageActivity;
 import com.exchange.yes.db.TradeItem;
 
 
@@ -92,8 +97,9 @@ public class NormalAdapter  extends BaseAdapter{
 					null);
 			viewHolder.askbid=(TextView) convertView
 					.findViewById(R.id.listview_1);
-			viewHolder.askbid.setText(mylist.get(pos).askbid);
-			
+//			viewHolder.askbid.setText(mylist.get(pos).askbid);
+			viewHolder.radioButton1=(RadioGroup)convertView
+					.findViewById(R.id.radioButton1);
 			viewHolder.price=(TextView) convertView
 					.findViewById(R.id.listview_2);
 			viewHolder.price.setText(mylist.get(pos).price);
@@ -103,13 +109,20 @@ public class NormalAdapter  extends BaseAdapter{
 			viewHolder.layout=(RelativeLayout)convertView.findViewById(R.id.TradeListItem);
 			convertView.setTag(viewHolder);
 			
-			if(pos==4||pos==5){
+			if(pos==4){
 				viewHolder.layout.setBackgroundColor(Color.parseColor("#03A9F4"));
+			}else if(pos==5){
+				viewHolder.layout.setBackgroundColor(Color.parseColor("#839832"));
 			}
+			
+			
+			
 			
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
+				
+		
 		return convertView;
 	}
 
@@ -119,5 +132,6 @@ public class NormalAdapter  extends BaseAdapter{
 		TextView askbid;
 		TextView price;
 		TextView number;
-		RelativeLayout layout;}
+		RelativeLayout layout;
+		RadioGroup radioButton1;}
 
