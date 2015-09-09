@@ -5,6 +5,8 @@ int anim dialog_root_show_amin 0x7f040003
 int anim progress_indeterminate_animation 0x7f040004
 int anim snackbar_hide_animation 0x7f040005
 int anim snackbar_show_animation 0x7f040006
+int anim zoomin 0x7f040007
+int anim zoomout 0x7f040008
 int array spinnername 0x7f090000
 int attr animate 0x7f01000d
 int attr check 0x7f010008
@@ -150,7 +152,7 @@ int id TextView01 0x7f060029
 int id TextView_yes 0x7f060071
 int id TradeListItem 0x7f060061
 int id TradeListItem2 0x7f060068
-int id a 0x7f060086
+int id a 0x7f060084
 int id abc 0x7f0600da
 int id action_cexchange 0x7f06006d
 int id action_mall 0x7f06006b
@@ -302,15 +304,15 @@ int id relativelayout2 0x7f06007d
 int id right 0x7f060003
 int id rl_anquan 0x7f060083
 int id rl_anquanbaohu 0x7f0600b9
-int id rl_exit 0x7f060087
+int id rl_exit 0x7f060085
 int id rl_geren 0x7f06007f
 int id rl_jiaoyi 0x7f060082
 int id rl_recode 0x7f0600b8
 int id rl_shenfen 0x7f0600ae
 int id rl_shouji 0x7f0600b2
-int id rl_youhuiquan 0x7f060084
+int id rl_youhuiquan 0x7f060086
 int id rl_youxiang 0x7f0600af
-int id rl_zhifu 0x7f060085
+int id rl_zhifu 0x7f060087
 int id rootSelector 0x7f0600c8
 int id sex 0x7f0600ab
 int id shape_bacground 0x7f0600e7
