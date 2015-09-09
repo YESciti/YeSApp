@@ -435,7 +435,7 @@ containing a value of this type.
         public static final int TextView_yes=0x7f060071;
         public static final int TradeListItem=0x7f060061;
         public static final int TradeListItem2=0x7f060068;
-        public static final int a=0x7f060086;
+        public static final int a=0x7f060084;
         public static final int abc=0x7f0600da;
         public static final int action_cexchange=0x7f06006d;
         public static final int action_mall=0x7f06006b;
@@ -587,15 +587,15 @@ containing a value of this type.
         public static final int right=0x7f060003;
         public static final int rl_anquan=0x7f060083;
         public static final int rl_anquanbaohu=0x7f0600b9;
-        public static final int rl_exit=0x7f060087;
+        public static final int rl_exit=0x7f060085;
         public static final int rl_geren=0x7f06007f;
         public static final int rl_jiaoyi=0x7f060082;
         public static final int rl_recode=0x7f0600b8;
         public static final int rl_shenfen=0x7f0600ae;
         public static final int rl_shouji=0x7f0600b2;
-        public static final int rl_youhuiquan=0x7f060084;
+        public static final int rl_youhuiquan=0x7f060086;
         public static final int rl_youxiang=0x7f0600af;
-        public static final int rl_zhifu=0x7f060085;
+        public static final int rl_zhifu=0x7f060087;
         public static final int rootSelector=0x7f0600c8;
         public static final int sex=0x7f0600ab;
         public static final int shape_bacground=0x7f0600e7;
