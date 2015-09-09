@@ -136,7 +136,8 @@ public class LoginActivity2 extends Activity implements OnClickListener {
 		              public void onClick(DialogInterface arg0, int arg1) {
 		                  // TODO Auto-generated method stub
 		            	  
-		            	  
+		            	  Intent HomeIntent = new Intent(LoginActivity2.this,HomepageActivity.class);
+		      			  startActivity(HomeIntent);
 		            	  
 		            	  
 		            	  Toast.makeText(LoginActivity2.this, "×¢²á³É¹¦", 1).show();
