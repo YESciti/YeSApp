@@ -26,8 +26,8 @@ import com.loopj.android.http.RequestParams;
  */
 public class MobileHttpClient {
 
-	private static final String BASE_FILEURL = "";
-	private static final String BASE_URL = "";
+	private static final String BASE_FILEURL = "http://localhost:8080/YesServer/";
+	private static final String BASE_URL = "http://localhost:8080/YesServer/";
 //	private static final String BASE_FILEURL="http://test.mobilechat.im";
 //	private static final String BASE_URL = "http://test.mobilechat.im/";
 	private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36";
@@ -39,6 +39,13 @@ public class MobileHttpClient {
     	client.getHttpClient().getParams().setParameter(ClientPNames.ALLOW_CIRCULAR_REDIRECTS, true);
     	client.addHeader("User-Agent", USER_AGENT);
     	client.addHeader("cookie", "uscookie="+cookie);
+    	client.get(getAbsoluteUrl(url), params, responseHandler);
+    }
+    public static void get(String url, RequestParams params,AsyncHttpResponseHandler responseHandler) {
+    	//client.addHeader("cookie", "uscookie=gtrhjriyo");
+    	System.out.println("mangerclient start=======================");
+    	client.getHttpClient().getParams().setParameter(ClientPNames.ALLOW_CIRCULAR_REDIRECTS, true);
+    	client.addHeader("User-Agent", USER_AGENT);
     	client.get(getAbsoluteUrl(url), params, responseHandler);
     }
     public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler,Context context) {
