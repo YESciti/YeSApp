@@ -357,11 +357,11 @@ OnChartGestureListener, OnChartValueSelectedListener{
 			
 			if(i<5)
 			{
-				item=new TradeItem("卖",i+"",i+"");
+				item=new TradeItem("卖",6.5-0.1*i+"",i+10+"");
 				newlist.add(item);
 			}else if(i>=5)
 			{
-				item=new TradeItem("买",i+"",i+"");
+				item=new TradeItem("买",6.5-0.1*i+"",i+12+"");
 				newlist.add(item);
 			}				
 		}

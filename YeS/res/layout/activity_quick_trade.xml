@@ -300,20 +300,21 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <RelativeLayout
+     <RelativeLayout
         android:id="@+id/lay4"
         android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:background="#88CECECE" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/lay3" >
 
-        <Button
+        <com.gc.materialdesign.views.ButtonFlat
             android:id="@+id/btn_submitorder_quick"
-            android:layout_width="80sp"
-            android:layout_height="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:background="#ffffff"
             android:text="@string/qianqujiaoyi" />
+    
     </RelativeLayout>
 
 </LinearLayout>

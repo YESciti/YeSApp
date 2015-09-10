@@ -73,8 +73,8 @@ public class Home1Fra extends ListFragment implements OnClickListener {
 		 if(HomepageActivity.mylist.size()==0){
 			 TradeItem item=new TradeItem();
 			 item.getask("Âô");
-			 item.getprice("0");
-			 item.getnumber("0");
+			 item.getprice("6.5");
+			 item.getnumber("12");
 			 Log.i("list","runright"+HomepageActivity.mylist.size());
 			 HomepageActivity.mylist.add(item);
 			 Log.i("list","runright"+HomepageActivity.mylist.size());

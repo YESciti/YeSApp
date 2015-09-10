@@ -7,6 +7,7 @@ import com.exchange.yes.R.menu;
 import com.exchange.yes.dep.FloatingActionButton;
 import com.exchange.yes.dep.FloatingActionsMenu;
 import com.gc.materialdesign.widgets.Dialog;
+import com.gc.materialdesign.views.Button;
 
 import android.os.Bundle;
 import android.app.Activity;
