@@ -39,6 +39,10 @@
         android:textColor="#000000" >
     </com.gc.materialdesign.views.ButtonRectangle>
 
+    
+    
+    
+    
     <TextView
         android:id="@+id/TextView_yes"
         android:layout_width="wrap_content"

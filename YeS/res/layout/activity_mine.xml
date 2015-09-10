@@ -12,7 +12,15 @@
 
      <RelativeLayout android:layout_width="fill_parent" android:layout_height="56dp" android:layout_alignParentRight="true" android:layout_alignParentTop="true" android:background="#1E88E5">
 
-         <TextView android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:text="自定义交易" android:textColor="#FFF" android:textSize="25dp" android:visibility="visible" />
+         <TextView android:id="@+id/textView1" 
+             android:layout_width="wrap_content" 
+             android:layout_height="wrap_content" 
+             android:layout_centerHorizontal="true" 
+             android:layout_centerVertical="true" 
+             android:text="个人中心" 
+             android:textColor="#FFF" 
+             android:textSize="25dp" 
+             android:visibility="visible" />
 
        <com.gc.materialdesign.views.LayoutRipple
            android:id="@+id/itemSwitches"
