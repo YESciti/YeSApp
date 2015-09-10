@@ -46,7 +46,8 @@
     
     
 <ScrollView     
-         android:id="@+id/myscroll"      
+         android:id="@+id/myscroll"  
+         android:layout_below="@id/titles"    
          android:layout_width="match_parent"     
          android:layout_height="match_parent"
          android:layout_weight="1.0" > 
@@ -54,15 +55,19 @@
  <LinearLayout
      android:layout_width="match_parent"
      android:layout_height="match_parent"
-     android:orientation="vertical" >
-
+     android:orientation="vertical"
+      android:background="#ffffff">
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="#ffffff" />
      <RelativeLayout
          android:id="@+id/rela2"
          android:layout_width="match_parent"
          android:layout_height="70dp"
-         android:layout_alignParentLeft="true"
-         android:layout_below="@+id/button1"
-         android:layout_marginTop="61dp" >
+         >
 
          <com.gc.materialdesign.views.LayoutRipple
              android:id="@+id/item_ecomm"
@@ -164,6 +169,12 @@
          </com.gc.materialdesign.views.LayoutRipple>
      </RelativeLayout>
 
+           <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+
+           android:background="#88CECECE" />
+
 <LinearLayout
     android:layout_width="match_parent"
      android:layout_height="match_parent"
@@ -184,6 +195,11 @@
             android:src="@drawable/jingdong" />
         
     </com.gc.materialdesign.views.LayoutRipple>
+               <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+
+            android:background="#88CECECE" />
  <com.gc.materialdesign.views.LayoutRipple
               android:id="@+id/itemButtons2"
               android:layout_width="fill_parent"
@@ -199,36 +215,64 @@
             android:src="@drawable/gugong" />
         
     </com.gc.materialdesign.views.LayoutRipple>
-     <com.gc.materialdesign.views.LayoutRipple
-              android:id="@+id/itemButtons3"
-              android:layout_width="fill_parent"
-              android:layout_height="207dp"
-              android:background="#FFF"
-              android:clickable="true" >
-
-        <ImageView
+           <View
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            
-            android:layout_centerInParent="true"
-            android:src="@drawable/jiuzhai" />
-         <com.gc.materialdesign.views.LayoutRipple
-              android:id="@+id/itemButtons2"
-              android:layout_width="fill_parent"
-              android:layout_height="207dp"
-              android:background="#FFF"
-              android:clickable="true" >
+            android:layout_height="10dp"
+            android:background="#88CECECE" />
+    <com.gc.materialdesign.views.LayoutRipple 
+        android:id="@+id/itemButtons4" 
+        android:layout_width="fill_parent" 
+        android:layout_height="207dp" 
+        android:background="#FFF" 
+        android:clickable="true">
 
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="200dp"
-            
-            android:layout_centerInParent="true"
-            android:src="@drawable/jiuzhai" />
+        <ImageView 
+            android:layout_width="fill_parent" 
+            android:layout_height="200dp" 
+            android:layout_centerInParent="true" 
+            android:src="@drawable/taobao" />
         
     </com.gc.materialdesign.views.LayoutRipple>
+     <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:background="#88CECECE" />
+     <com.gc.materialdesign.views.LayoutRipple 
+        android:id="@+id/itemButtons5" 
+        android:layout_width="fill_parent" 
+        android:layout_height="207dp" 
+        android:background="#FFF" 
+        android:clickable="true">
+
+        <ImageView 
+            android:layout_width="fill_parent" 
+            android:layout_height="200dp" 
+            android:layout_centerInParent="true" 
+            android:src="@drawable/yilong" />
         
     </com.gc.materialdesign.views.LayoutRipple>
+         <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:background="#88CECECE" />
+    <com.gc.materialdesign.views.LayoutRipple 
+        android:id="@+id/itemButtons6" 
+        android:layout_width="fill_parent" 
+        android:layout_height="207dp" 
+        android:background="#FFF" 
+        android:clickable="true">
+
+        <ImageView 
+            android:layout_width="fill_parent" 
+            android:layout_height="200dp" 
+            android:layout_centerInParent="true" 
+            android:src="@drawable/dididache" />
+        
+    </com.gc.materialdesign.views.LayoutRipple>
+         <View
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:background="#88CECECE" />
 </LinearLayout>
  </LinearLayout>
 	</ScrollView>  

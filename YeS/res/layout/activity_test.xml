@@ -253,9 +253,9 @@
             android:id="@+id/action_personal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/white"
+            fab:fab_colorNormal="@color/green"
             fab:fab_title="个人中心"            
-            fab:fab_icon="@drawable/icn_widget"
+            fab:fab_icon="@drawable/person1"
 
             fab:fab_colorPressed="@color/white_pressed"/>
 
@@ -263,29 +263,29 @@
             android:id="@+id/action_mall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_icon="@drawable/icn_switch"
+            fab:fab_colorNormal="@color/accent_color"
+            fab:fab_icon="@drawable/mall1"
             fab:fab_title="商城"
 
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorPressed="@color/blue_semi_transparent_pressed"/>
       
         <com.exchange.yes.dep.FloatingActionButton
             android:id="@+id/action_qexchange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/white"
+            fab:fab_colorNormal="@color/pink"
             fab:fab_title="快速交易"
-
-            fab:fab_colorPressed="@color/white_pressed"
+			fab:fab_icon="@drawable/quickt1"
+            fab:fab_colorPressed="@color/pink_pressed"
             android:visibility="gone" />
          <com.exchange.yes.dep.FloatingActionButton
             android:id="@+id/action_cexchange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_icon="@drawable/icn_button"
+            fab:fab_colorNormal="@color/pink"
+            fab:fab_icon="@drawable/customer1"
             fab:fab_title="自定义交易"
-            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_colorPressed="@color/pink_pressed"
             android:visibility="gone" />
 
     </com.exchange.yes.dep.FloatingActionsMenu>

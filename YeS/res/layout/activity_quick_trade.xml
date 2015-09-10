@@ -101,7 +101,8 @@
                 android:layout_height="28dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="#B3E5FC" />
+                android:background="#03279b"
+                android:src="@drawable/bizhong" />
 		<View
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
@@ -200,11 +201,12 @@
 
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/icn_select_color" />
+                android:src="@drawable/jine1"
+                android:background="#03279b" />
 
             <View
                 android:layout_width="fill_parent"
