@@ -41,7 +41,7 @@
             
              android:orientation="vertical" >
             
-       <!--  <com.gc.materialdesign.views.LayoutRipple
+        <com.gc.materialdesign.views.LayoutRipple
         	android:id="@+id/introduce"
         	android:layout_width="match_parent"
         	android:layout_height="120dp"
@@ -70,42 +70,14 @@
             android:background="#88CECECE"
             android:layout_alignParentBottom="true" />
       
-    </com.gc.materialdesign.views.LayoutRipple> -->
-    
-    
-    
-    <com.gc.materialdesign.views.LayoutRipple
-        android:id="@+id/listvi"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/spinnerlayout"
-        android:background="#ffffff"
-        android:clickable="true" >
-    
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text=" 请选择要查看的币种"
-            android:textSize="16sp" /> 
-            
-        
-        <View
-         android:layout_width="fill_parent"
-         android:layout_height="1dp"
-         android:layout_alignParentBottom="true"
-         android:background="#1E88E5" />
-       	
-    </com.gc.materialdesign.views.LayoutRipple> 
-    
-    
+    </com.gc.materialdesign.views.LayoutRipple>
      <RelativeLayout
         android:id="@+id/spinnerlayout"
         android:layout_width="fill_parent"
-        android:layout_height="90sp"
+        android:layout_height="115sp"
          android:background="#ffffff">
 
-     <!-- <View
+     <View
          android:layout_width="fill_parent"
          android:layout_height="1dp"
          android:layout_alignBottom="@+id/textView1"
@@ -121,7 +93,7 @@
          android:layout_centerVertical="true"
          android:layout_centerHorizontal="true"
          android:text="请选择要查看的币种"
-         android:textSize="16sp" /> -->
+         android:textSize="16sp" />
         <Spinner
      		android:id="@+id/cur_spinner"
      	android:layout_width="150sp"

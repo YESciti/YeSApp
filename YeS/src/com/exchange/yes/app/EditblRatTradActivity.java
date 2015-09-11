@@ -27,7 +27,7 @@ Button deal;
 			
 			@Override
 			public void onClick(final View flatButton) {
-				Dialog dialog = new Dialog(EditblRatTradActivity.this, "提示", "确认提交您目前填写的订单");
+				Dialog dialog = new Dialog(EditblRatTradActivity.this, "Title", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
 				dialog.setOnAcceptButtonClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v){
