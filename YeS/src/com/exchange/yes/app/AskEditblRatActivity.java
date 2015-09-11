@@ -19,11 +19,11 @@ public class AskEditblRatActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_ask_editbl_rat);
+		setContentView(R.layout.activity_editbl_rat_trad);
 		
 //		对于剩余未交易成功部分，用户点击更改汇率按钮
 //		REWRITE RATE AND OFFER A NEW ORDER
-		findViewById(R.id.btn_submitorder_edit).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.btn_submitcontin).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent adkEditIntent=new Intent(AskEditblRatActivity.this,EditblRatTradActivity.class);
@@ -32,7 +32,7 @@ public class AskEditblRatActivity extends Activity {
 		});
 //		对于剩余未交易成功部分，用户不改汇率，挂单等待
 //		THE RATE UNCHAGED AND WAIT
-		findViewById(R.id.btn_submitorder_edit).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.btn_submitresult).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent adkEditIntent=new Intent(AskEditblRatActivity.this,HomepageActivity.class);
