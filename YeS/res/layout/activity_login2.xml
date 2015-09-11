@@ -16,29 +16,6 @@
         android:layout_marginBottom="23dp"
         android:background="#FFF" />
 
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/btn_log"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView_yes"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp"
-        android:background="#fffffe"
-        android:text="登录"
-        android:textColor="#000000" >
-    </com.gc.materialdesign.views.ButtonRectangle>
-
-    <com.gc.materialdesign.views.ButtonRectangle
-        android:id="@+id/btn_log_s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/TextView_yes"
-        android:layout_below="@+id/view1"
-        android:background="#fffffe"
-        android:text="随便看看"
-        android:textColor="#000000" >
-    </com.gc.materialdesign.views.ButtonRectangle>
-
     
     
     
@@ -61,5 +38,28 @@
         android:layout_marginLeft="23dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/logo2" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/btn_log"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView_yes"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="17dp"
+        android:background="#fffffe"
+        android:text="登录"
+        android:textColor="#000000" >
+    </com.gc.materialdesign.views.ButtonRectangle>
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:id="@+id/btn_log_s"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/TextView_yes"
+        android:layout_alignTop="@+id/btn_log"
+        android:background="#fffffe"
+        android:text="随便看看"
+        android:textColor="#000000" >
+    </com.gc.materialdesign.views.ButtonRectangle>
 
 </RelativeLayout>

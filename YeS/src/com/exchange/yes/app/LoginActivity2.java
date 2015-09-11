@@ -318,9 +318,9 @@ public class LoginActivity2 extends Activity implements OnClickListener {
 		startActivity(HomeIntent);
 		
 
-		overridePendingTransition(R.anim.zoomin,
-				R.anim.zoomout);
-		LoginActivity2.this.finish();
+//		overridePendingTransition(R.anim.zoomin,
+//				R.anim.zoomout);
+//		LoginActivity2.this.finish();
 	}
 	
 
