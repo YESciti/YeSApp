@@ -29,16 +29,21 @@
                 android:textSize="25dp"
                 android:visibility="visible" />
 
-            <com.gc.materialdesign.views.ButtonIcon
-                android:id="@+id/bu_back_jiaoyi "
-                android:layout_width="60sp"
-                android:layout_height="56sp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:background="#ffffff"
-                android:clickable="true"
-                materialdesign:iconDrawable="@drawable/ic_action_arrow_left" >
-            </com.gc.materialdesign.views.ButtonIcon>
+<com.gc.materialdesign.views.LayoutRipple
+           android:id="@+id/item_back_edit"
+           android:layout_width="64sp"
+           android:layout_height="fill_parent"
+           android:background="#1E88E5"
+           android:clickable="true" >
+
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_action_arrow_left" />
+
+    	</com.gc.materialdesign.views.LayoutRipple>
 
             <View
                 android:id="@+id/view1"
@@ -46,7 +51,7 @@
                 android:layout_height="2dp"
                 android:layout_alignParentBottom="true"
                 
-                android:background="#88CECECE" />
+                android:background="@color/background"/>
 
         </RelativeLayout>
     </RelativeLayout>
@@ -174,7 +179,7 @@
             android:layout_height="10dp"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/lay0.2"
-            android:background="#88CECECE" />
+            android:background="@color/background" />
     <RelativeLayout
         android:id="@+id/lay2"
         android:layout_width="match_parent"
@@ -283,7 +288,7 @@
             android:layout_height="10dp"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/lay2.2"
-            android:background="#88CECECE" />
+            android:background="@color/background"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -393,7 +398,7 @@
         android:layout_height="10dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/lay3"
-        android:background="#88CECECE" />
+        android:background="@color/background" />
 
     <RelativeLayout
         android:id="@+id/lay4"

@@ -3,6 +3,7 @@ package com.exchange.yes.app;
 import com.exchange.yes.R;
 import com.exchange.yes.R.layout;
 import com.exchange.yes.R.menu;
+import com.gc.materialdesign.views.LayoutRipple;
 import com.gc.materialdesign.widgets.Dialog;
 
 import android.os.Bundle;
@@ -14,13 +15,17 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-public class QuickTradeActivity extends Activity {
+public class QuickTradeActivity extends Activity implements OnClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_quick_trade);
+		
+		
+		LayoutRipple back=(LayoutRipple) findViewById(R.id.item_back_quick);
+		back.setOnClickListener(this);
 		
 //		dialog of confirm your deal 
 		findViewById(R.id.btn_submitorder_quick).setOnClickListener(new OnClickListener() {
@@ -53,6 +58,12 @@ public class QuickTradeActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.quick_trade, menu);
 		return true;
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		QuickTradeActivity.this.finish();
 	}
 
 }

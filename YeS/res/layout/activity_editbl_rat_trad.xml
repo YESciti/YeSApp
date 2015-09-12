@@ -34,46 +34,6 @@
         android:background="#FFFFFF" >
 
         <RelativeLayout
-            android:id="@+id/lay0.1"
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:background="#ffffff" >
-
-            <TextView
-<<<<<<< HEAD
-               
-=======
-                
->>>>>>> parent of 7c7e5c0... Revert "911"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="14dp"
-                android:layout_toRightOf="@+id/ImageView01"
-                android:gravity="center_vertical"
-                android:text="订单发送成功"
-                android:textSize="16sp" 
-                />
-
-            <ImageView
-                android:id="@+id/ImageView01"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:src="#B3E5FC" />
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_alignLeft="@+id/TextView01"
-                android:layout_alignParentBottom="true"
-                android:background="#01579b" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
             android:id="@+id/lay0.2"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
@@ -104,7 +64,43 @@
             android:textSize="14sp" />
             
         </RelativeLayout>
-        
+
+        <RelativeLayout
+            android:id="@+id/lay0.1"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#ffffff" >
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="#B3E5FC" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignLeft="@+id/TextView01"
+                android:layout_alignParentBottom="true"
+                android:background="#01579b" />
+
+            <TextView
+                android:id="@+id/txt_huilv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@+id/ImageView01"
+                android:gravity="center_vertical"
+                android:text="提交成功"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
     <View
@@ -137,6 +133,7 @@
                 android:layout_toRightOf="@+id/imageView1"
                 android:gravity="center_vertical"
                 android:text="交易成功"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" 
                  />
             <View
@@ -190,7 +187,7 @@
       android:layout_alignParentLeft="true"
       android:layout_marginLeft="42dp"
       android:text="您的订单完成交易"
-      android:textAppearance="?android:attr/textAppearanceLarge"
+      
       android:textSize="14sp" />
 
         </RelativeLayout>
@@ -226,6 +223,7 @@
                 android:layout_toRightOf="@+id/imageView1"
                 android:gravity="center_vertical"
                 android:text="交易详情"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="16sp" />
 
             <View
@@ -259,7 +257,7 @@
                 android:layout_alignBottom="@+id/textView2"
                 android:layout_toLeftOf="@+id/textView3"
                 android:text="6.2"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                
                 android:textSize="14sp" />
 
             <TextView
@@ -270,7 +268,7 @@
                 android:layout_alignBottom="@+id/textlay3.1"
                 android:layout_centerHorizontal="true"
                 android:text="成交"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                
                 android:textSize="14sp" />
             
             
@@ -290,7 +288,7 @@
                 android:layout_alignLeft="@+id/textView2"
                 android:layout_below="@+id/Text_time3"
                 android:text="50美元未成交，正在等待交易"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                
                 android:textSize="14sp" />
 
             <TextView
@@ -300,7 +298,7 @@
                 android:layout_above="@+id/Text_time3"
                 android:layout_toLeftOf="@+id/textlay3.1"
                 android:text="50美元以汇率"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                
                 android:textSize="14sp" />
 
         </RelativeLayout>

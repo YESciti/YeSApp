@@ -147,7 +147,7 @@
      <View
             android:layout_width="fill_parent"
             android:layout_height="10sp"           
-            android:background="#88CECECE" />	
+            android:background="@color/background"/>	
  <com.gc.materialdesign.views.LayoutRipple
         android:id="@+id/listvi"
         android:layout_width="fill_parent"
@@ -183,7 +183,7 @@
             <View
             android:layout_width="fill_parent"
             android:layout_height="10sp"           
-            android:background="#88CECECE" />	
+            android:background="@color/background" />	
              <com.gc.materialdesign.views.LayoutRipple
         android:id="@+id/listvi2"
         android:layout_width="fill_parent"

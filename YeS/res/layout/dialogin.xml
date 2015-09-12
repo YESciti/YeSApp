@@ -19,7 +19,8 @@
           android:layout_centerHorizontal="true"
           android:layout_centerVertical="true"
           android:text="登陆注册" 
-          android:textSize="20sp"/>
+          android:textSize="20sp"
+          android:textColor="#ffffff"/>
 
   </RelativeLayout>
 <EditText 

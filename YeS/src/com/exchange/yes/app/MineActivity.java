@@ -1,6 +1,6 @@
 package com.exchange.yes.app;
 
-	import android.app.Activity;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +27,9 @@ import com.gc.materialdesign.views.LayoutRipple;
 			LayoutRipple rl_jiaoyi=(LayoutRipple) findViewById(R.id.rl_jiaoyi);
 			LayoutRipple rl_zhifu=(LayoutRipple) findViewById(R.id.rl_zhifu);
 			LayoutRipple rl_youhuiquan=(LayoutRipple) findViewById(R.id.rl_youhuiquan);
+			
+			LayoutRipple back=(LayoutRipple) findViewById(R.id.item_back_mine);
+			back.setOnClickListener(this);
 			
 			rl_geren.setOnClickListener(this);
 			rl_anquan.setOnClickListener(this);
@@ -55,7 +58,11 @@ import com.gc.materialdesign.views.LayoutRipple;
 			Log.i("mine","gone1");
 			
 			switch(lr.getId()){
-				
+			case R.id.item_back_mine:
+		
+				MineActivity.this.finish();
+				break;
+			
 			case R.id.rl_exit:
 				
 				intent=new Intent(MineActivity.this,Person.class);	
