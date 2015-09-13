@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.exchange.yes.app.LoginActivity2;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.BinaryHttpResponseHandler;
@@ -33,14 +34,24 @@ public class MobileManagerClient {
 //	private static final String BASE_URL = "http://test.mobilechat.im/";
 	private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36";
     private static AsyncHttpClient client = new AsyncHttpClient();
+	public static boolean polling=false;
     
-    public static void get(String url, RequestParams params, String cookie,AsyncHttpResponseHandler responseHandler) {
-    	//client.addHeader("cookie", "uscookie=gtrhjriyo");
-    	System.out.println("mangerclient start=======================");
+//    public static void get(String url, RequestParams params, String cookie,AsyncHttpResponseHandler responseHandler) {
+//    	//client.addHeader("cookie", "uscookie=gtrhjriyo");
+//    	System.out.println("mangerclient start=======================");
+//    	client.getHttpClient().getParams().setParameter(ClientPNames.ALLOW_CIRCULAR_REDIRECTS, true);
+//    	client.addHeader("User-Agent", USER_AGENT);
+//    	client.addHeader("cookie", "uscookie="+cookie);
+//    	client.get(getAbsoluteUrl(url), params, responseHandler);
+//    }
+    
+    public static void get(Context context,String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
+    	if (client == null) client = new AsyncHttpClient();
     	client.getHttpClient().getParams().setParameter(ClientPNames.ALLOW_CIRCULAR_REDIRECTS, true);
     	client.addHeader("User-Agent", USER_AGENT);
-    	client.addHeader("cookie", "uscookie="+cookie);
-    	client.get(getAbsoluteUrl(url), params, responseHandler);
+    	client.get(context,getAbsoluteUrl(url), params, responseHandler);
+    	//设置超时时间
+    	client.setTimeout(Constant.POLL_TIMEOUT);
     }
     public static void post(String url, RequestParams params, AsyncHttpResponseHandler responseHandler,Context context) {
         

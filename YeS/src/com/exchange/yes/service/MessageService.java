@@ -12,16 +12,23 @@ package com.exchange.yes.service;
 import java.util.HashMap;
 import java.util.Random;
 
+import org.apache.http.Header;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.util.Log;
-
+import com.exchange.yes.app.HomepageActivity;
+import com.exchange.yes.db.TradeItem;
 import com.exchange.yes.util.MobileManagerClient;
+
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -38,7 +45,8 @@ public class MessageService extends Service {
 	public boolean ispoll=false;
 	public static final String ACTION = "com.exchange.yes.service.PollingService";
 //	 private final IBinder mBinder = new LocalBinder();  
-
+	private String currencyIdString="1";
+	private NotificationManager mManager;
 
 	
 	
@@ -131,8 +139,20 @@ public class MessageService extends Service {
 	
 
 	// 澶勭悊鏂颁笂绾跨敤鎴?
-	
+	//重新尝试
+	public void retry() {
 
+		if (!isCancel) {
+			
+			repoll();
+		} else {
+			if (MobileManagerClient.polling) {
+				
+				
+				MobileManagerClient.polling = false;
+			}
+		}
+	}
 	
 	public void repoll() { 
 		// 随机数生成器
@@ -159,15 +179,87 @@ public class MessageService extends Service {
 	 * 模拟下载任务，每秒钟更新一次
 	 */
 	public void poll() {
-		if (onGetMessageListener != null)
-			onGetMessageListener.onRefreshState();
 		
-		
+		if (!isCancel) {		
+			// 定期的刷新列表
+			if (onGetMessageListener != null)
+				onGetMessageListener.onRefreshState();
+			MobileManagerClient.get(getApplicationContext(),  "userver/poll", getRequestParams()
+					,  new JsonHttpResponseHandler() {
+				@Override
+				 public void onSuccess(int statusCode, org.apache.http.Header[] headers
+						 , org.json.JSONObject jsonobj){
+					try {//检测是否成功
+						boolean flag = jsonobj.getBoolean("success");
+						//获取currencyid数据
+						if (flag) {
+							JSONArray tradeArray = jsonobj
+									.getJSONArray("price");
+							int lastMsg = 0;
+							TradeItem trade=null;
+							
+							for (int i = 0; i < tradeArray.length(); i++) {
+								JSONObject PollObject=tradeArray.getJSONObject(i);
+								String currencyId = "";
+								if (PollObject.has("_id")) {
+									currencyId = PollObject
+											.getString("_id");
+									if( currencyId != null ){
+										currencyIdString = String.valueOf(currencyId)
+												+ "," + currencyIdString;
+									}
+								}
+								
+								//获取普通数据
+								if (PollObject.getString(
+												"toId").equals(userid)){
+									trade=new TradeItem(
+											PollObject
+											.getString("askbid")
+											, PollObject
+											.getString("price")
+											, PollObject
+											.getString("number"));
+									HomepageActivity.mylist.add(trade);//数据储存
+								}
+								
+						}}
+					}catch (Exception e) {
+						//retry();
+						System.out.println("pollhandle+ pollsuccess but handle Exception"+e.getMessage());
+//						Log.d("pollhandle", "pollsuccess but handle Exception " + e.getMessage());
+						e.printStackTrace();
+						//isCancel = false;
+					}	
+					
+				}
+				@Override
+				public void onFailure(int statusCode, org.apache.http.Header[] headers, java.lang.Throwable throwable, org.json.JSONObject errorResponse){
+					// TODO Auto-generated method stub
+					
+					//2登录超时
+					
+					
+					retry();
+				}
+				
+					    
+
+						
+			
+				
+			});
+		}
+						
 	}
 
-	public void cancelGetMessage() {}
+	public void cancelGetMessage() {
+		isCancel = true;
+	}
 
-	public void startGetMessage() {}
+	public void startGetMessage() {
+		isCancel = false;
+	}
 
 	/**
 	 * 
@@ -184,7 +276,7 @@ public class MessageService extends Service {
 
 
 	
-	//兰永坤 构造requestparams
+	//兰永坤 构造requestparams 要和确定具体的值
 	private RequestParams getRequestParams() {
 		RequestParams requestParams = null;
 		HashMap<String, String> paramMap = new HashMap<String, String>();
@@ -205,7 +297,7 @@ public class MessageService extends Service {
 
 	// 鍒濆鍖栭?氱煡鏍忛厤缃?
 	private void initNotifiManager() {
-//		mManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+		mManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		//pm = (PowerManager)getSystemService(POWER_SERVICE);
 	}
 

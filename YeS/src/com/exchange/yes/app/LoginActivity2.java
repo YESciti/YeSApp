@@ -304,10 +304,7 @@ public class LoginActivity2 extends Activity implements OnClickListener {
 						e.printStackTrace();
 					}
 
-				}
-
-			
-			
+				}			
 		});
 
 	}

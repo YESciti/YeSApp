@@ -14,12 +14,21 @@ import com.exchange.yes.pre.WidgetActivity;
 import com.gc.materialdesign.widgets.Dialog;
 
 public class AskEditblRatActivity extends Activity {
-
+	 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_editbl_rat_trad);
+		
+		
+		Intent intent=getIntent();
+		 int position=intent.getIntExtra("position", 1);
+		 String success=intent.getStringExtra("success");
+		 String time=intent.getStringExtra("time");
+		 String tradeid=intent.getStringExtra("tradeid");
+		
+		
 		
 //		对于剩余未交易成功部分，用户点击更改汇率按钮
 //		REWRITE RATE AND OFFER A NEW ORDER
@@ -36,7 +45,8 @@ public class AskEditblRatActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent adkEditIntent=new Intent(AskEditblRatActivity.this,HomepageActivity.class);
-				startActivity(adkEditIntent);
+				AskEditblRatActivity.this.setResult(0);
+				AskEditblRatActivity.this.finish();
 			}
 		});
 

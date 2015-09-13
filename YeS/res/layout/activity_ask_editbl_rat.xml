@@ -161,7 +161,7 @@
             </RadioGroup>
 
             <Spinner
-                android:id="@+id/spinner_bizhong_edit"
+                android:id="@+id/spinner__edit"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_centerVertical="true"

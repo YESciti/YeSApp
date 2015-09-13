@@ -102,10 +102,10 @@ public class NormalAdapter  extends BaseAdapter{
 					.findViewById(R.id.radioButton1);
 			viewHolder.price=(TextView) convertView
 					.findViewById(R.id.listview_2);
-			viewHolder.price.setText(mylist.get(pos).price);
+			viewHolder.price.setText(mylist.get(pos).rate);
 			viewHolder.number=(TextView) convertView
 					.findViewById(R.id.listview_3);
-			viewHolder.number.setText(mylist.get(pos).number);
+			viewHolder.number.setText(mylist.get(pos).amount);
 			viewHolder.layout=(RelativeLayout)convertView.findViewById(R.id.TradeListItem);
 			convertView.setTag(viewHolder);
 			

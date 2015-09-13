@@ -83,7 +83,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	public static Home1Fra homefragment=null;
 	private Spinner spinner;
 	private LineChart mChart;
-	
+	public int position=1;
 	
 	//service
 	private boolean serviceBound = false;  
@@ -179,7 +179,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      @Override
 	      public void onClick(View view) {
 	    	 Intent quickIntent = new Intent(HomepageActivity.this,MallActivity.class);
-	 		 startActivity(quickIntent);
+	 		 startActivityForResult(quickIntent, 0);
 	        Toast.makeText(HomepageActivity.this, "市场", Toast.LENGTH_SHORT).show();
 	      }
 	    });
@@ -188,7 +188,9 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      @Override
 	      public void onClick(View view) {
 	    	 Intent quickIntent = new Intent(HomepageActivity.this,QuickTradeActivity.class);
-	 		 startActivity(quickIntent);
+	    	 quickIntent.putExtra("position", position);
+//	 		 startActivity(quickIntent);
+	 		startActivityForResult(quickIntent, 0);
 	        Toast.makeText(HomepageActivity.this, "快速交易", Toast.LENGTH_SHORT).show();
 	      }
 	    });
@@ -196,8 +198,12 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	    action_cexchange.setOnClickListener(new OnClickListener() {
 	      @Override
 	      public void onClick(View view) {
-	    	 Intent quickIntent = new Intent(HomepageActivity.this,EditblRatTradActivity.class);
-	 		 startActivity(quickIntent);
+	    	  Bundle mBundle = new Bundle(); 
+	    	 Intent customIntent = new Intent(HomepageActivity.this,EditblRatTradActivity.class);
+	    	 mBundle.putInt("position", position);
+	    	 customIntent.putExtras(mBundle);
+//	 		 startActivity(customIntent);
+	 		startActivityForResult(customIntent, 0);
 	        Toast.makeText(HomepageActivity.this, "自定义交易", Toast.LENGTH_SHORT).show();
 	      }
 	    });
@@ -208,6 +214,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	    SimpleAdapter currecyspin=new SimpleAdapter(this, currencyspinner, R.layout.spinner3_item, new String[]{"log","listname"}, new int[]{R.id.image,R.id.text});
 		//给spinner添加adapter
 		spinner.setAdapter(currecyspin);
+		position=spinner.getSelectedItemPosition();
 	    
 	    
 //button刷新

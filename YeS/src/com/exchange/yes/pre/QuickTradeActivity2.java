@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class QuickTradeActivity extends Activity {
+public class QuickTradeActivity2 extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

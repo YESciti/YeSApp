@@ -46,7 +46,7 @@ public class Home2Fra extends Fragment implements OnClickListener {
 		switch(v.getId()){
 		case R.id.item_quicktrade:
 			 Intent quickIntent;
-			 quickIntent=new Intent(getActivity(),QuickTradeActivity.class);
+			 quickIntent=new Intent(getActivity(),QuickTradeActivity2.class);
 			  startActivity(quickIntent);
 		
 			break;
