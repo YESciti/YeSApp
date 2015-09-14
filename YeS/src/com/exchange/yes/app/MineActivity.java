@@ -72,14 +72,14 @@ import com.gc.materialdesign.views.LayoutRipple;
 			
 			case R.id.rl_zhifu:
 				
-				intent=new Intent(MineActivity.this,Secure.class);
-				startActivity(intent);
+//				intent=new Intent(MineActivity.this,Secure.class);
+//				startActivity(intent);
 				break;
 			
 	        case R.id.rl_jiaoyi:
 				
-				intent=new Intent(MineActivity.this,Person.class);
-				startActivity(intent);
+//				intent=new Intent(MineActivity.this,Person.class);
+//				startActivity(intent);
 				break;
 				
 	        case R.id.rl_geren:
