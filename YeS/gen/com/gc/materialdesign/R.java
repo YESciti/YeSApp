@@ -62,7 +62,7 @@ public final class R {
 		public static final int blue = 0x7f0600e7;
 		public static final int button_accept = 0x7f0600ef;
 		public static final int button_cancel = 0x7f0600ee;
-		public static final int buttonflat = 0x7f060060;
+		public static final int buttonflat = 0x7f06005f;
 		public static final int contentDialog = 0x7f0600ea;
 		public static final int contentSelector = 0x7f0600e3;
 		public static final int dialog_rootView = 0x7f0600e9;
