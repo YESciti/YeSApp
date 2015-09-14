@@ -51,7 +51,7 @@
     android:layout_alignLeft="@+id/listview_1"
     android:layout_alignParentTop="true" >
 	<RadioButton
-         android:id="@+id/radioB_buy_edit"
+         android:id="@+id/radio_buy_edit"
          android:layout_width="30sp"
     	 android:layout_height="30sp"
          android:gravity="center"

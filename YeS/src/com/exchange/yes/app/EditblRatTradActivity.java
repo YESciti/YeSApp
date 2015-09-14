@@ -17,6 +17,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -38,11 +40,15 @@ public class EditblRatTradActivity extends Activity implements OnClickListener{
 		private Handler customTradeHandler = null;
 		//当前上下文
 		private Context context;
-		private static String success="1";
-		private static String time="1:31";
-		private static String tradeid="00001";
-		private static String customrate="6.2";
-		
+
+		private static String currencycode="1";
+		private static int position;
+		private static String buysell="sell.action?";
+		private static String amount=0+"";
+		private static String customrate=6.2+"";
+		private Spinner spinner;
+		private EditText editTextAmount;
+		private EditText editTextRate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,15 +56,22 @@ public class EditblRatTradActivity extends Activity implements OnClickListener{
 		setContentView(R.layout.activity_ask_editbl_rat);
 		
 		Bundle b=getIntent().getExtras();
-		int position=b.getInt("position", 1);
+		 position=b.getInt("position", 1);
 		
 		context = this;
 		LayoutRipple back=(LayoutRipple) findViewById(R.id.item_back_edit);		
 		back.setOnClickListener(this);
 		
-		Spinner spinner=(Spinner) findViewById(R.id.spinner__edit);
+		spinner=(Spinner) findViewById(R.id.spinner__edit);
 		spinner.setSelection(position);
 		
+		editTextAmount=(EditText)findViewById(R.id.ceditText_amount_edit);
+		editTextRate=(EditText) findViewById(R.id.editText_rate_edit);
+		 RadioGroup mRadioGroup= (RadioGroup) findViewById(R.id.radioG_role_edit);
+		 if(R.id.radioc_buy_edit==mRadioGroup.getCheckedRadioButtonId())
+		 {
+		 buysell="sell.action?";
+		 }
 		customTradeHandler=new Handler(){
 			@Override
 			public void handleMessage(Message msg){
@@ -87,13 +100,19 @@ public class EditblRatTradActivity extends Activity implements OnClickListener{
 				dialog.setOnAcceptButtonClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v){
+						position=spinner.getSelectedItemPosition();
+						currencycode=position+"";
+						amount=editTextAmount.getText().toString();
+						customrate=editTextRate.getText().toString();
+						
 						Intent adkEditIntent=new Intent(EditblRatTradActivity.this,AskEditblRatActivity.class);
-						adkEditIntent.putExtra("success", success);
-					    adkEditIntent.putExtra("time", time);
-					    adkEditIntent.putExtra("tradeid", tradeid);
-					    adkEditIntent.putExtra("rate",customrate);
+						adkEditIntent.putExtra("currencycode", currencycode);
+					    adkEditIntent.putExtra("buysell", buysell);
+					    adkEditIntent.putExtra("amount", amount);
+					    adkEditIntent.putExtra("customrate",customrate);
 						startActivity(adkEditIntent);
-						Toast.makeText(EditblRatTradActivity.this, "Click accept button", 1).show();
+						Toast.makeText(EditblRatTradActivity.this, "确认交易订单", 1).show();
+						EditblRatTradActivity.this.finish();
 					}
 				});
 				dialog.show();
@@ -152,9 +171,9 @@ public class EditblRatTradActivity extends Activity implements OnClickListener{
 							msg.what = 1;
 							customTradeHandler.sendMessage(msg);
 //							JSONObject trade =  traderesult.getJSONObject("quickresult");
-							success=traderesult.getString("success");
-							time=traderesult.getString("time");
-							tradeid=traderesult.getString("tradeid");	
+//							success=traderesult.getString("success");
+//							time=traderesult.getString("time");
+//							tradeid=traderesult.getString("tradeid");	
 							customrate=traderesult.getString("rate");
 						}
 						

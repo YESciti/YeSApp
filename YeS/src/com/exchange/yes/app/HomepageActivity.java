@@ -188,6 +188,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      @Override
 	      public void onClick(View view) {
 	    	 Intent quickIntent = new Intent(HomepageActivity.this,QuickTradeActivity.class);
+	    	 position=spinner.getSelectedItemPosition();
 	    	 quickIntent.putExtra("position", position);
 //	 		 startActivity(quickIntent);
 	 		startActivityForResult(quickIntent, 0);
@@ -200,6 +201,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	      public void onClick(View view) {
 	    	  Bundle mBundle = new Bundle(); 
 	    	 Intent customIntent = new Intent(HomepageActivity.this,EditblRatTradActivity.class);
+	    	 position=spinner.getSelectedItemPosition();
 	    	 mBundle.putInt("position", position);
 	    	 customIntent.putExtras(mBundle);
 //	 		 startActivity(customIntent);
@@ -214,7 +216,7 @@ OnChartGestureListener, OnChartValueSelectedListener{
 	    SimpleAdapter currecyspin=new SimpleAdapter(this, currencyspinner, R.layout.spinner3_item, new String[]{"log","listname"}, new int[]{R.id.image,R.id.text});
 		//给spinner添加adapter
 		spinner.setAdapter(currecyspin);
-		position=spinner.getSelectedItemPosition();
+		
 	    
 	    
 //button刷新

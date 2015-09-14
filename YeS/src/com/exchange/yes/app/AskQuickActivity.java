@@ -30,6 +30,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AskQuickActivity extends Activity {
@@ -37,9 +39,23 @@ public class AskQuickActivity extends Activity {
 		private Handler quickTradeHandler = null;
 		//当前上下文
 		private Context context;
-		private static String success="1";
-		private static String time="1:31";
-		private static String tradeid="00001";
+		private static String currencycode="1";
+		private static String buysell="sell.action?";
+		private static String amount=0+"";
+		private static boolean flag=false;
+		TextView amountText;
+		TextView rateText;
+		//返回数据
+		JSONObject returnobject;
+		double returnRate;
+		double returnAmount;
+		
+		//layout
+		RelativeLayout layout1;
+		RelativeLayout layout2;
+		
+		
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,7 +63,18 @@ public class AskQuickActivity extends Activity {
 		setContentView(R.layout.activity_ask_quick);
 		
 		
-
+		Intent intent=getIntent();
+		currencycode=intent.getStringExtra("currencycode");
+		buysell=intent.getStringExtra("buysell");
+		amount=intent.getStringExtra("amount");
+		
+		
+		
+		amountText=(TextView) findViewById(R.id.txt_amount); 
+		rateText=(TextView) findViewById(R.id.textlay3_1_rate);
+		
+		layout1=(RelativeLayout) findViewById(R.id.qlay2);
+		layout2=(RelativeLayout) findViewById(R.id.qlay3);
 		
 //		
 //		对于剩余未交易成功部分，用户点击更改汇率按钮
@@ -98,7 +125,8 @@ public class AskQuickActivity extends Activity {
 	protected void onStart(){
 		super.onStart();
 		 try {
-				postServer("" ,"","");
+				postServer();
+				
 				
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
@@ -110,14 +138,14 @@ public class AskQuickActivity extends Activity {
 	 }
 
 	//数据传送post
-		private void postServer(String currencyid ,String askbid, String number) 
+		private void postServer() 
 				throws JSONException,UnsupportedEncodingException{
 			HashMap<String, String> paramMap = new HashMap<String, String>();
 			paramMap.put("transactiontype", "0");
-			paramMap.put("currencycode","1");
-			paramMap.put("amount", "123");
+			paramMap.put("currencycode",currencycode);
+			paramMap.put("amount", amount);
 			RequestParams params = new RequestParams(paramMap);
-			MobileHttpClient.get("buy.action?", params, new JsonHttpResponseHandler(){
+			MobileHttpClient.get(buysell, params, new JsonHttpResponseHandler(){
 				@Override
 				public void onFailure(int statusCode, org.apache.http.Header[] headers, java.lang.Throwable throwable, org.json.JSONObject errorResponse){
 					// TODO Auto-generated method stub
@@ -130,16 +158,19 @@ public class AskQuickActivity extends Activity {
 				@Override
 				 public void onSuccess(int statusCode, org.apache.http.Header[] headers, org.json.JSONObject traderesult){
 					try{//获取交易数据
-						//boolean flag = traderesult.getBoolean("success");
-						if(true){
+						returnobject=traderesult.getJSONObject("success");
+						flag=true;										
+						if(flag){
 							Message msg = new Message();
 							//1提交成功
 							msg.what = 1;
 							quickTradeHandler.sendMessage(msg);
 //							JSONObject trade =  traderesult.getJSONObject("quickresult");
-							JSONObject returnobject=traderesult.getJSONObject("success");
-							Double exchangeratef=returnobject.getDouble("exchangerate");
-							Log.i("test914",exchangeratef+"");
+							
+							returnRate = returnobject.getDouble("exchangerate");
+							returnAmount=returnobject.getDouble("amount");
+							setTexTView();
+							Log.i("test914",returnAmount+"");
 						}
 						
 					}catch (JSONException e) {
@@ -151,4 +182,13 @@ public class AskQuickActivity extends Activity {
 			});
 		}
 		
+		public void setTexTView(){
+			if(flag){
+				layout1.setVisibility(View.VISIBLE);
+				amountText.setText(returnAmount+"");
+				
+				layout2.setVisibility(View.VISIBLE);
+				rateText.setText("共计获得"+returnRate+"美元");
+			}
+		}
 }

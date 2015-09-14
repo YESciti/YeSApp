@@ -26,6 +26,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -38,23 +40,37 @@ public class QuickTradeActivity extends Activity implements OnClickListener{
 	private Handler quickTradeHandler = null;
 	//当前上下文
 	private Context context;
-	private static String success="1";
-	private static String time="1:31";
-	private static String tradeid="00001";
-	
+	private static String currencycode="1";
+	private static int position;
+	private static String buysell="sell.action?";
+	private static String amount=0+"";
+	private Spinner spinner;
+	private EditText edittext;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_quick_trade);
 		context = this;
+		Bundle b=getIntent().getExtras();
+	    position=b.getInt("position", 1);
 		
-		Intent intent=getIntent();
-		int position=intent.getIntExtra("position", 1);
+//		Intent intent=getIntent();
+//		position=intent.getIntExtra("position", 1);
 		LayoutRipple back=(LayoutRipple) findViewById(R.id.item_back_quick);
 		
-		Spinner spinner=(Spinner) findViewById(R.id.spinner_bizhong_edit);
+	    spinner=(Spinner) findViewById(R.id.spinner_bizhong_edit);
 		spinner.setSelection(position);
+		
+		edittext=(EditText)findViewById(R.id.qeditText_amount);
+		
+		 RadioGroup mRadioGroup= (RadioGroup) findViewById(R.id.radioG_quick_edit);
+		 if(R.id.radioB_buy_edit==mRadioGroup.getCheckedRadioButtonId())
+			 {
+			 buysell="sell.action?";
+			 }
+		
+		
 		back.setOnClickListener(this);
 		//开启子线程
 		quickTradeHandler=new Handler(){
@@ -91,6 +107,10 @@ public class QuickTradeActivity extends Activity implements OnClickListener{
 				dialog.setOnAcceptButtonClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v){
+						
+						position=spinner.getSelectedItemPosition();
+						currencycode=position+"";
+						amount=edittext.getText().toString();
 //						 try {
 //							postServer("" ,"","");
 //						} catch (UnsupportedEncodingException e) {
@@ -101,11 +121,12 @@ public class QuickTradeActivity extends Activity implements OnClickListener{
 //							e.printStackTrace();
 //						} 
 						Intent adkEditIntent=new Intent(QuickTradeActivity.this,AskQuickActivity.class);
-					    adkEditIntent.putExtra("success", success);
-					    adkEditIntent.putExtra("time", time);
-					    adkEditIntent.putExtra("tradeid", tradeid);
+					    adkEditIntent.putExtra("currencycode", currencycode);
+					    adkEditIntent.putExtra("buysell", buysell);
+					    adkEditIntent.putExtra("amount", amount);
 						startActivity(adkEditIntent);
-						Toast.makeText(QuickTradeActivity.this, "直接交易", 1).show();
+//						Toast.makeText(QuickTradeActivity.this, "直接交易", 1).show();
+						QuickTradeActivity.this.finish();
 					}
 				});
 				dialog.setOnCancelButtonClickListener(new OnClickListener() {
