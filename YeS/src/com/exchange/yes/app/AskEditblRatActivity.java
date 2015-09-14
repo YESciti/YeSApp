@@ -35,8 +35,7 @@ public class AskEditblRatActivity extends Activity {
 		findViewById(R.id.btn_submitcontin).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent adkEditIntent=new Intent(AskEditblRatActivity.this,EditblRatTradActivity.class);
-				startActivity(adkEditIntent);
+				AskEditblRatActivity.this.finish();
 			}
 		});
 //		对于剩余未交易成功部分，用户不改汇率，挂单等待

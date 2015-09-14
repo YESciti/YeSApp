@@ -21,6 +21,7 @@ import android.os.Message;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -90,7 +91,16 @@ public class QuickTradeActivity extends Activity implements OnClickListener{
 				dialog.setOnAcceptButtonClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v){
-						Intent adkEditIntent=new Intent(QuickTradeActivity.this,AskEditblRatActivity.class);
+//						 try {
+//							postServer("" ,"","");
+//						} catch (UnsupportedEncodingException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						} catch (JSONException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						} 
+						Intent adkEditIntent=new Intent(QuickTradeActivity.this,AskQuickActivity.class);
 					    adkEditIntent.putExtra("success", success);
 					    adkEditIntent.putExtra("time", time);
 					    adkEditIntent.putExtra("tradeid", tradeid);
@@ -128,11 +138,11 @@ public class QuickTradeActivity extends Activity implements OnClickListener{
 	private void postServer(String currencyid ,String askbid, String number) 
 			throws JSONException,UnsupportedEncodingException{
 		HashMap<String, String> paramMap = new HashMap<String, String>();
-		paramMap.put("currencyid", currencyid);
-		paramMap.put("askbid", askbid);
-		paramMap.put("number", number);
+		paramMap.put("transactiontype", "0");
+		paramMap.put("currencycode","1");
+		paramMap.put("amount", "123");
 		RequestParams params = new RequestParams(paramMap);
-		MobileHttpClient.get("quicktrade.action", params, new JsonHttpResponseHandler(){
+		MobileHttpClient.get("buy.action?", params, new JsonHttpResponseHandler(){
 			@Override
 			public void onFailure(int statusCode, org.apache.http.Header[] headers, java.lang.Throwable throwable, org.json.JSONObject errorResponse){
 				// TODO Auto-generated method stub
@@ -145,16 +155,15 @@ public class QuickTradeActivity extends Activity implements OnClickListener{
 			@Override
 			 public void onSuccess(int statusCode, org.apache.http.Header[] headers, org.json.JSONObject traderesult){
 				try{//获取交易数据
-					boolean flag = traderesult.getBoolean("success");
-					if(flag){
+					//boolean flag = traderesult.getBoolean("success");
+					if(true){
 						Message msg = new Message();
 						//1提交成功
 						msg.what = 1;
 						quickTradeHandler.sendMessage(msg);
 //						JSONObject trade =  traderesult.getJSONObject("quickresult");
-						success=traderesult.getString("success");
-						time=traderesult.getString("time");
-						tradeid=traderesult.getString("tradeid");						
+						JSONObject returnobject=traderesult.getJSONObject("success");
+						Double exchangeratef=returnobject.getDouble("exchangerate");
 					}
 					
 				}catch (JSONException e) {

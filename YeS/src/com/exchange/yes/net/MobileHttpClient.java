@@ -26,8 +26,8 @@ import com.loopj.android.http.RequestParams;
  */
 public class MobileHttpClient {
 
-	private static final String BASE_FILEURL = "http://localhost:8080/YesServer/";
-	private static final String BASE_URL = "http://localhost:8080/YesServer/";
+	private static final String BASE_FILEURL = "http://yesserver.picp.net:21738/YesServer/";
+	private static final String BASE_URL = "http://yesserver.picp.net:21738/YesServer/";
 //	private static final String BASE_FILEURL="http://test.mobilechat.im";
 //	private static final String BASE_URL = "http://test.mobilechat.im/";
 	private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36";

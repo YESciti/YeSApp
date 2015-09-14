@@ -11,6 +11,7 @@
 		<!-- 往SDCard写入数据权限 -->
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:maxSdkVersion="21" android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name="com.exchange.yes.app.MyApplication"
         android:allowBackup="true"

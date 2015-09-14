@@ -229,8 +229,8 @@ public class LoginActivity2 extends Activity implements OnClickListener {
 
 
 		HashMap<String, String> paramMap = new HashMap<String, String>();
-		paramMap.put("email", username);
-		paramMap.put("password", password);
+		paramMap.put("name", username);
+		paramMap.put("pswd", password);
 		RequestParams params = new RequestParams(paramMap);
 		//
 		//服务器验证账户名密码
